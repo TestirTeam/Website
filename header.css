@@ -43,7 +43,7 @@
 }
 
 
-.header a.active {
+.header a:after {
     background-color: #5d0013;
     color: #ffffff;
 }
