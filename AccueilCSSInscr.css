@@ -3,10 +3,9 @@ body{
     padding: 0;
     display: block;
     width: 100%;
-    height: 710px;
-    overflow-x: hidden;
+    height: 1000px;
+    overflow:hidden;
     scroll-behavior: smooth;
-   /* background-color: black;*/
 }
 scroll-page {
     display: flex;
@@ -14,39 +13,12 @@ scroll-page {
 }
 
 #background{
-    position: absolute;
     background-image: url("Images/fond.png");
     background-position: center;
     width : 100%;
     height: 100%;
     filter: blur(5 px) brightness(25%);
     -webkit-filter: blur(5px) brightness(25%);
-}
-#MsgBienvenu{
-    position: absolute;
-    text-align: center;
-    padding-top: 20%;
-    padding-left: 38%;
-    color: #FFFFFF;
-    font-family: MuseoW01-900, serif;
-
-
-}
-#bvnTestir{
-    display: inline-flex;
-
-
-}
-#bvnsur{
-    font-min-size: 30px;
-
-}
-#imgTestirMsg{
-    padding-left: 40px;
-    align-self: center;
-    width: 30%;
-    height: auto;
-    
 }
 
 /* style du header */
@@ -56,7 +28,7 @@ scroll-page {
     overflow: hidden;
     background-color: #000000;
     padding: 0 10px;
-    z-index: 8;
+    z-index: 2;
 }
 
 /* Style des liens du header */
@@ -70,7 +42,6 @@ scroll-page {
     font-family: "Apple SD Gothic Neo", serif;
     line-height: 25px;
     border-radius: 4px;
-
 }
 
 /* Style de la box qui contient le logo  */
@@ -122,56 +93,6 @@ scroll-page {
 
 }
 
-/* FOOTER */
-
-#footer{
-
-    background-color: #463f3f;
-    margin-top: 49%;
-    width: 98.8%;
-    height: 20%;
-    position: absolute;
-    padding: 10px 10px;
-
-}
-.traitFoot{
-    position: absolute;
-    padding: 1px 5px;
-    margin-top: 50px;
-    width: 98.8%;
-    background-color: #FAF2F2;
-}
-#imgReseauFoot{
-    float: right;
-}
-#imgserviceUP{
- position: absolute;
-    bottom: 0;
-    margin-left: 15%;
-    z-index: 0;
-}
-#imgserviceDOWN{
-    position: static;
-    top: 0;
-    margin-left: 21.2%;
-}
-
-#imgnotrestart{
-    position: absolute;
-    width: 75%;
-    margin-top: 20%;
-    margin-left: 25%;
-
-}
-.nosclients{
-
-}
-#imgnosclients{
-
-    margin-top: 9%;
-    width: 75%;
-}
-
 
 
 
@@ -181,17 +102,94 @@ scroll-page {
 @font-face {font-family: "MuseoW01-900"; src: url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.eot"); src: url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.woff") format("woff"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.svg#MuseoW01-900") format("svg"); }
 
 
+/* Page connexion
 
-#page-2{
-    position: page;
-    background: #000000;
+ */
+#co{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #d10012;
+    z-index: 1;
+    filter: opacity(20%);
+
 }
-#page-3{
-    position: page;
-    background: black;
+#coblanc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+    position: absolute;
+    width: 30%;
+    height: 80%;
+    background-color: white;
+    z-index: 2;
+    margin-top: 3%;
+    margin-left: 35%;
 
 
 }
+.titreCO{
+    font: 30px MuseoW01-900 ,Serif;
+    color: #74131E;
+}
+h3{
+    margin-top: 5%;
+    font: 12px MuseoW01-900 ,Serif;
+}
+.resterCo{ /*Div boite check box et label rester connecter*/
+    margin-top: 10%;
+    margin-inside: 0;
+}
+input[type="checkbox"]{
+    height: 10px;
+    width: 10px;
+}
+label{
+    font: 10px MuseoW01-900 ,sans-serif;
+    color: #585151;
+}
+input{
+    background-color: rgba(180, 186, 181, 0.64);
+    width: 400px;
+    font: 1em "Apple SD Gothic Neo" ,sans-serif;
+    -moz-border-radius : 20px;
+    -webkit-border-radius : 20px;
+    border-radius : 20px;
+    border: #000000 1px solid;
+}
+.buttonCo{
+    /* hérite de la class button-cours */
+    font: 30px MuseoW01-900 ,sans-serif;
+    color : #fff;
+    /* padding : 5px 8px;  pour une font-size parent de 16px */
+    background-color : #B23E3E;
+    padding : 0.7em 1em;
+    margin-top: 10%;
+    display : inline-table;
+    /* on veut que le bouton Css garde des bordures arrondies de 20px quoi qu'il arrive
+    20px = border-radius
+    */
+    min-height : 20px;
+    /* */
+    -moz-border-radius : 20px;
+    -webkit-border-radius : 20px;
+    border-radius : 20px;
+    cursor:pointer;
+}
+.buttonCo:hover{
+    background-color : #5d0013;
+}
+.buttonCo:focus{
+    background-color : #747a75;
+}
+.buttonCo:focus span{
+    display : table-cell;
+    min-height : 20px;
+    vertical-align : middle;
+}
+.buttonCo:active{
+    background-color : #d10012;
 
-
+}
 
