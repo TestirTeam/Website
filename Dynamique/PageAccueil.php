@@ -40,11 +40,14 @@ session_start();
             <a href="#page-1">Accueil</a>
             <a href="#page-2">Notre Start-up</a>
             <a href="#page-3">Nos Services</a>
+            <!-- Si on detecte une variable mail dans la session c'est qu'il y a connexion-->
             <?php  if(isset($_SESSION['mail'])):     ?>
+                <!-- On change le header en consequences -->
                 <a href=monProfil.php>Mon Profil</a>
                 <a href=deconnexion.php id="deco" >Déconnexion</a>
 
             <?php  else:     ?>
+                <!-- Sinon on laisse la possibilité de se connecter-->
                 <a href=AccueilCO.php>Connexion</a>
                 <a href=AccueilInscr.php>Inscription</a>
             <?php  endif;    ?>

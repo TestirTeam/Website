@@ -1,10 +1,13 @@
 <?php
 $db = new PDO("mysql:host=localhost;dbname=bdd_testir;port=3309", "root", "root");
-if(isset($_POST['formInscr']))
+
+if(isset($_POST['formInscr']))/* detection si le bouton est pressé*/
 {
+    /*concatenation de condition pour eviter les mails similaire , valider en manquant des champs etc*/
     if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND!empty($_POST['mail'])
         AND!empty($_POST['mdp']) AND!empty($_POST['mdpc']))
     {
+        /* recuperation du formulaire*/
         $pseudo=htmlspecialchars($_POST['pseudo']);
         $nom=htmlspecialchars($_POST['nom']);
         $prenom=htmlspecialchars($_POST['prenom']);
@@ -19,7 +22,7 @@ if(isset($_POST['formInscr']))
 
         $nomlen=strlen($nom);
         $prenomlen=strlen($prenom);
-
+        /*on verifie que le pseudo n'est pas present deja dans la base de données */
         $reqpseudo= $db->prepare('SELECT * FROM client WHERE pseudo= ?');
         $reqpseudo->execute(array($pseudo));
         $pseudoexist=$reqpseudo->rowCount();
@@ -41,6 +44,7 @@ if(isset($_POST['formInscr']))
                                                                         values ('$pseudo','$nom', '$prenom','$age','$date','$pays','$adrs','$sexe','$mail','$mdp')");
                                 $reponse->execute();
                                 $error = 'Votre compte a été crée !';
+                                header('Location: http://localhost:63342/WebsiteTestir/Website/Dynamique/PageAccueil.php?_ijt=pn3c0m06jlmi9ho94rbjfdl03o');
 
                             } else {
                                 $error = "Vos mots de passes ne correspondent pas !";
