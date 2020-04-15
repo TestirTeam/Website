@@ -5,7 +5,6 @@ body{
     width: 100%;
     height: 1000px;
     overflow:hidden;
-    scroll-behavior: smooth;
 }
 scroll-page {
     display: flex;
@@ -13,13 +12,14 @@ scroll-page {
 }
 
 #background{
-    background-image: url("Images/fond.png");
+    background-image: url("../Images/fond.png");
     background-position: center;
     width : 100%;
     height: 100%;
     filter: blur(5 px) brightness(25%);
     -webkit-filter: blur(5px) brightness(25%);
 }
+
 
 /* style du header */
 .header {
@@ -102,10 +102,10 @@ scroll-page {
 @font-face {font-family: "MuseoW01-900"; src: url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.eot"); src: url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.woff") format("woff"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.svg#MuseoW01-900") format("svg"); }
 
 
-/* Page connexion
+/* Page Inscription
 
  */
-#co{
+#inscr{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -113,52 +113,85 @@ scroll-page {
     z-index: 1;
     filter: opacity(20%);
 
+
 }
-#coblanc{
+#inscrblanc{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 100px;
     position: absolute;
-    width: 30%;
-    height: 50%;
+    text-align: center;
+    width: 35%;
+    height: 600px;
     background-color: white;
     z-index: 2;
-    margin-top: 10%;
+    margin-top: 3%;
     margin-left: 35%;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+
 
 
 }
-.titreCO{
-    font: 50px MuseoW01-900 ,Serif;
+.titreInscr{
+    font: 30px MuseoW01-900 ,Serif;
     color: #74131E;
 }
 h3{
     margin-top: 5%;
-    font: 20px MuseoW01-900 ,Serif;
+    font: 12px MuseoW01-900 ,Serif;
 }
 .resterCo{ /*Div boite check box et label rester connecter*/
     margin-top: 10%;
     margin-inside: 0;
 }
 input[type="checkbox"]{
-    height: 20px;
-    width: 20px;
+    height: 10px;
+    width: 10px;
 }
 label{
-    font: 15px MuseoW01-900 ,sans-serif;
+    font: 10px MuseoW01-900 ,sans-serif;
     color: #585151;
 }
 input{
     background-color: rgba(180, 186, 181, 0.64);
     width: 400px;
-    font: 1.5em "Apple SD Gothic Neo" ,sans-serif;
+    font: 1em "Apple SD Gothic Neo" ,sans-serif;
     -moz-border-radius : 20px;
     -webkit-border-radius : 20px;
     border-radius : 20px;
     border: #000000 1px solid;
 }
-.buttonCo{
+
+select{
+    background-color: rgba(180, 186, 181, 0.64);
+    width: 200px;
+    font: 1em "Apple SD Gothic Neo" ,sans-serif;
+    -moz-border-radius : 20px;
+    -webkit-border-radius : 20px;
+    border-radius : 20px;
+    border: #000000 1px solid;
+}
+#age{
+    width: 30px;
+    margin-right: 90px;
+
+}
+#daten{
+    width: 140px;
+    text-align: center;
+
+
+
+}
+#dateage{
+    display: inline-flex;
+    margin-top: 10px;
+    justify-content: space-between;
+
+}
+.buttonInscr{
     /* hérite de la class button-cours */
     font: 30px MuseoW01-900 ,sans-serif;
     color : #fff;
@@ -177,23 +210,19 @@ input{
     border-radius : 20px;
     cursor:pointer;
 }
-.buttonCo:hover{
+.buttonInscr:hover{
     background-color : #5d0013;
 }
-.buttonCo:focus{
+.buttonInscr:focus{
     background-color : #747a75;
 }
-.buttonCo:focus span{
+.buttonInscr:focus input[onsubmit]{
     display : table-cell;
     min-height : 20px;
     vertical-align : middle;
 }
-.buttonCo:active{
+.buttonInscr:active{
     background-color : #d10012;
 
 }
-
-
-
-
 

@@ -1,3 +1,7 @@
+<?php
+//Session qui recupère les infos de l'user connecté
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,28 +20,34 @@
     <div id="MsgBienvenu">
         <div id="bvnTestir">
             <h1 id="bvnsur" style="font-size: 30px">Bienvenue sur</h1>
-            <img src="Images/TesTirBlanc....png" alt="" id="imgTestirMsg"/>
+            <img src="../Images/TesTirBlanc....png" alt="" id="imgTestirMsg"/>
         </div>
         <h2>Pour améliorer vos performances </h2>
         <h2 id="detir">de tirs, rejoignez-nous!</h2>
     </div>
     <div>
-        <img src="Images/serviceUP.png" alt="" id="imgserviceUP" />
+        <img src="../Images/serviceUP.png" alt="" id="imgserviceUP" />
     </div>
 
     <div class="header">
         <a href="#page-3" class="logo">
             <div class="igloo">
-                <img src="Images/Logo%20Testir.png" alt="" id="imgTestirHeaderLogo"/>
-                <img src="Images/TesTirBlanc....png" alt="" id="imgTestirHeader"/>
+                <img src="../Images/Logo%20Testir.png" alt="" id="imgTestirHeaderLogo"/>
+                <img src="../Images/TesTirBlanc....png" alt="" id="imgTestirHeader"/>
             </div>
         </a>
         <div class="header-right">
             <a href="#page-1">Accueil</a>
             <a href="#page-2">Notre Start-up</a>
             <a href="#page-3">Nos Services</a>
-            <a href=AccueilCO.html>Connexion</a>
-            <a href=AccueilInscr.html>Inscription</a>
+            <?php  if(isset($_SESSION['mail'])):     ?>
+                <a href=monProfil.php>Mon Profil</a>
+                <a href=deconnexion.php id="deco" >Déconnexion</a>
+
+            <?php  else:     ?>
+                <a href=AccueilCO.php>Connexion</a>
+                <a href=AccueilInscr.php>Inscription</a>
+            <?php  endif;    ?>
         </div>
     </div>
 
@@ -49,25 +59,24 @@
 <scroll-page id="page-2">
 
     <div>
-        <img src="Images/Notre%20start-up.png" alt="" id="imgnotrestart" />
+        <img src="../Images/Notre%20start-up.png" alt="" id="imgnotrestart" />
     </div>
     <div>
-        <img src="Images/serviceDOWN.png" alt="" id="imgserviceDOWN" />
+        <img src="../Images/serviceDOWN.png" alt="" id="imgserviceDOWN" />
     </div>
 
 </scroll-page>
 <scroll-page id="page-3">
     <div class="nosclients">
-        <img src="Images/nosclients.png" alt="" id="imgnosclients" />
+        <img src="../Images/nosclients.png" alt="" id="imgnosclients" />
     </div>
     <div id="footer">
         <div class="logoreseau">
-            <img src="Images/Logo_Reseau.png" alt="" id="imgReseauFoot"/>
+            <img src="../Images/Logo_Reseau.png" alt="" id="imgReseauFoot"/>
         </div>
         <div class="traitFoot"></div>
     </div>
 </scroll-page>
-
 
 
 
