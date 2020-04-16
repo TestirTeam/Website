@@ -1,0 +1,267 @@
+body {font-family: "Apple SD Gothic Neo", serif;}
+.header {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    background-color: #000000;
+    padding: 0px 10px;
+}
+
+.header a {
+    float: left;
+    color: #f8fff9;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    margin: 0;
+    padding: 0;
+
+}
+/* style des logo */
+#imgTestirHeader{
+    max-width: 40%;
+    height: auto;
+
+}
+#imgTestirHeaderLogo{
+    max-width: 20%;
+    height: auto;
+
+}
+
+/* changement fond survole */
+.header a:hover {
+    background-color: #660000;
+    color: #ffffff;
+}
+
+
+.header a:focus{
+    background-color: #5d0013;
+    color: #ffffff;
+}
+
+.header-right {
+    float: right;
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+}
+
+body{
+    background-color: #0d0d0d;
+}
+section{
+    margin: 30px auto auto;
+    border-style: none none solid ;
+    border-width: 7px;
+    height: 170px;
+    padding-top: 10px;
+    border-color: #660000;
+}
+
+#photoCompte img{
+   overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:70px;
+    width:130px;
+    height:130px;
+}
+#photoCompte{
+    border-width: 2px;
+    border-color: #FFFFFF;
+}
+
+#PrenomNom{
+    color: grey;
+    position: absolute;
+    text-align: left;
+    left: 300px;
+    top: 70px;
+    font-size: 40px;
+    font-weight: 200;
+}
+#Email{
+    position: absolute;
+    text-align: left;
+    color: #FFFFFF;
+    left: 300px;
+    top: 120px;
+    font-size: 20px;
+
+}
+#Age{
+    position: absolute;
+    color: #FFFFFF;
+    left: 300px;
+    top: 170px
+}
+section div a{
+    display: flex;
+}
+a.bouton1 {
+    text-decoration: none;
+    display: block;
+    width: 150px;
+    height: 30px;
+    border: 2px solid #5d0013;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 400px;
+    top: 170px;
+}
+a.bouton1:hover {
+    background-color: #5d0013;
+}
+a.bouton2 {
+    text-decoration: none;
+    display: block;
+    width: 150px;
+    height: 30px;
+    border: 2px solid #5d0013;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 600px;
+    top: 170px;
+}
+a.bouton2:hover {
+    background-color: #5d0013;
+}
+a.bouton3 {
+    text-decoration: none;
+    display: block;
+    width: 150px;
+    height: 30px;
+    border: 2px solid #5d0013;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 800px;
+    top: 170px;
+}
+a.bouton3:hover {
+    background-color: #5d0013;
+}
+.Boutton{
+    display : inline-block;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    margin-top: 50px;
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+.row {margin: 0 -5px;}
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-image: linear-gradient(to right,#d9d9d9,#a6a6a6);
+}
+
+.card h3{
+    color: black;
+}
+.card a{
+    color: black;
+}
+.flex-container{
+    display: flex;
+    color: white;
+}
+.flex-container >div{
+    font-size: 40px;
+    margin: 30px;
+    text-align: center;
+}
+
+.flex-container .h3{
+    color: grey;
+    font-size: 30px;
+}
+.heading {
+    font-size: 25px;
+    margin-right: 25px;
+    color: white;
+}
+
+.side {
+    float: left;
+    width: 15%;
+    margin-top: 10px;
+    color: white;
+}
+
+.middle {
+    float: left;
+    width: 70%;
+    margin-top: 10px;
+}
+
+.right {
+    text-align: center;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+}
+
+.bar-5 {width: 60%; height: 18px; background-color: #4CAF50;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 40%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 80%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+
+
+
