@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,13 +31,13 @@
         <a id="photoCompte"><img src="image/PhotoProfil.png" alt="photo de profil"/></a>
         <div>
             <a id="PrenomNom">
-                Pierre Jean - Examinateur
+                <?php echo $_SESSION["prenom"].' '.$_SESSION["nom"];?> - Examinateur
             </a>
             <a id="Email">
-                pierre.jean@gmail.com
+                <?php echo $_SESSION["mail"];?>
             </a>
             <a id="Age">
-                Age:  54 ans
+                Age:  <?php echo $_SESSION["age"];?> ans
             </a>
         </div>
         <div class="Boutton">
@@ -110,3 +112,4 @@
         </ul>
     </div>
 </div>
+
