@@ -85,9 +85,9 @@ if(isset($_POST['formCo']))//Verification du click bouton
             </div>
         </a>
         <div class="header-right">
-            <a href="../Dynamique/PageAccueil.php#page-1">Accueil</a>
-            <a href="../Dynamique/PageAccueil.php#page-2">Notre Start-up</a>
-            <a href="../Dynamique/PageAccueil.php#page-3">Nos Services</a>
+            <a href="../statique/PageAccueil.html#page-1">Accueil</a>
+            <a href="../statique/PageAccueil.html#page-2">Notre Start-up</a>
+            <a href="../statique/PageAccueil.html#page-3">Nos Services</a>
             <a href=AccueilCO.php>Connexion</a>
             <a href=AccueilInscr.php>Inscription</a>
         </div>

@@ -1,11 +1,10 @@
 <?php
 
 ?>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../views/AccueilCSS.css">
+    <link rel="stylesheet" type="text/css" href="../../stylesheet/AccueilCSS.css">
     <title>Testir</title>
 </head>
 <body>
@@ -47,8 +46,8 @@
 
             <?php  else:     ?>
                 <!-- Sinon on laisse la possibilité de se connecter-->
-                <a href=AccueilCO.php>Connexion</a>
-                <a href=AccueilInscr.php>Inscription</a>
+                <a href=../../Dynamique/AccueilCO.php>Connexion</a>
+                <a href=../../Dynamique/AccueilInscr.php>Inscription</a>
             <?php  endif;    ?>
         </div>
     </div>

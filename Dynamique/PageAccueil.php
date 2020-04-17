@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../MVC/views/AccueilCSS.css">
+    <link rel="stylesheet" href="../stylesheet/AccueilCSS.css">
     <title>Testir</title>
 </head>
 <body>
@@ -43,7 +43,7 @@ session_start();
             <!-- Si on detecte une variable mail dans la session c'est qu'il y a connexion-->
             <?php  if(isset($_SESSION['mail'])):     ?>
                 <!-- On change le header en consequences -->
-                <a href=monProfil.php>Mon Profil</a>
+                <a href=FelixCompte/Profil_Utilisateur.php>Mon Profil</a>
                 <a href=deconnexion.php id="deco" >Déconnexion</a>
 
             <?php  else:     ?>
