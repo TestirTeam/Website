@@ -32,7 +32,7 @@ if(isset($_POST['formCo']))//Verification du click bouton
 
 
             $error="Vous etes connecté !";
-            header('Location: http://localhost:63342/WebsiteTestir/Dynamique/PageAccueil.php?_ijt=cm5k50v2klbijrp8tn0a1nhtkl');
+            header('Location: http://localhost/WebsiteTestir/Website/Dynamique/PageAccueil.php#page-1');
 
         }else{
 

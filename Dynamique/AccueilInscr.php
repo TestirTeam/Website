@@ -44,7 +44,7 @@ if(isset($_POST['formInscr']))/* detection si le bouton est pressé*/
                                                                         values ('$pseudo','$nom', '$prenom','$age','$date','$pays','$adrs','$sexe','$mail','$mdp')");
                                 $reponse->execute();
                                 $error = 'Votre compte a été crée !';
-                                header('Location: http://localhost:63342/WebsiteTestir/Website/Dynamique/PageAccueil.php?_ijt=pn3c0m06jlmi9ho94rbjfdl03o');
+                                header('Location: http://http://localhost/WebsiteTestir/Website/Dynamique/PageAccueil.php');
 
                             } else {
                                 $error = "Vos mots de passes ne correspondent pas !";
