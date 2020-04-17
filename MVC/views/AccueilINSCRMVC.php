@@ -115,21 +115,21 @@ if(isset($_POST['formInscr']))/* detection si le bouton est pressé*/
                 <option value="man">Homme<option/>
                 <option value="woman">Femme<option/>
                 <select/>
-            <h3>Email</h3>
-            <input type="text" id="mail" name="mail">
-            <h3>Mot de passe</h3>
-            <input type="password" id="mdp" name="mdp">
-            <h3>Confirmer mot de passe</h3>
-            <input type="password" id="mdpc" name="mdpc">
-            <div class="resterCo">
-                <input type="checkbox" id="resterco" name="Rester Connecté" size="20">
-                <label for="resterco">Recevoir par email les newsletter de Testir</label>
-            </div>
-            <div class="resterCo">
-            <input type="checkbox" id="condition" name="condition" size="20">
-            <label for="resterco2">J'ai lu et j'accepte les conditions d'utilisations</label>
-            </div>
-            <input type=submit class="buttonInscr" name="formInscr">
+                <h3>Email</h3>
+                <input type="text" id="mail" name="mail">
+                <h3>Mot de passe</h3>
+                <input type="password" id="mdp" name="mdp">
+                <h3>Confirmer mot de passe</h3>
+                <input type="password" id="mdpc" name="mdpc">
+                <div class="resterCo">
+                    <input type="checkbox" id="resterco" name="Rester Connecté" size="20">
+                    <label for="resterco">Recevoir par email les newsletter de Testir</label>
+                </div>
+                <div class="resterCo">
+                    <input type="checkbox" id="condition" name="condition" size="20">
+                    <label for="resterco2">J'ai lu et j'accepte les conditions d'utilisations</label>
+                </div>
+                <input type=submit class="buttonInscr" name="formInscr">
         </form>
 
 
