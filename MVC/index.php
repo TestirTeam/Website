@@ -7,7 +7,7 @@ if (!empty($_GET['page']) AND is_file('controllers/'.$_GET['page'].'.php')){
     include('controllers/'.$_GET['page'].'.php');
 
     } else{
-        require('views/PageAccueil.php');
+        require('views/AccueilMVC.php');
 
     }
 
