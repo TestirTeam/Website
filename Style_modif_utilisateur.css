@@ -8,7 +8,7 @@ body:before {
     content: "";
     position: fixed;
     height: 100%; width: 100%;
-    background: url("image/fond_site2.png");
+    background: url("Images/fond.png");
     background-size: cover;
     z-index: -1; /* Keep the background behind the content */
     filter:contrast(100%);
@@ -148,29 +148,35 @@ a:visited {
 }
 
 a:focus {
-    border-bottom: 1px solid;
-    background: tomato;
+    font-weight:bold;
 }
 
 a:hover {
-    /*border-bottom: 1px solid;*/
-    background: firebrick;
+    font-weight:bold;
 }
 
 a:active {
-    background: tomato;
-    color: brown;
+    color: #a6a6a6;
 }
 
-input[type=text], select, input[type=date], input[type=email] {
+input[type=text], select, input[type=date], input[type=mail] {
     /*width: 100%;*/
     padding: 10px 20px;
-    margin: 15px 0;
+    margin-top: 15px;
+    margin-left: 30px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+label{ /*pour aligner le formulaire*/
+    display: block;
+    width: 150px;
+    float: left;
+}
+
+
 
 .profil{
     border-color: darkred;
@@ -181,4 +187,27 @@ input[type=text], select, input[type=date], input[type=email] {
 .mail{
     border-color: darkred;
     box-shadow: 5px 10px 18px black;
+}
+
+.modifier{
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    float: right;
+    background-color: white;
+    color: black;
+    border: 2px solid #d10012;
+}
+
+.modifier:hover {
+    background-color: #d10012;
+    color: white;
 }
