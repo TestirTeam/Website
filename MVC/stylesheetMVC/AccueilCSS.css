@@ -14,7 +14,7 @@ scroll-page {
     height: 105%;
 }
 
-#background{
+#background{+
     position: absolute;
     background-image: url("../../Images/fond.png");
     background-position: center;
