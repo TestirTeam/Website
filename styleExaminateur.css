@@ -182,7 +182,7 @@ a.bouton3:hover {
 * {
     box-sizing: border-box;
 }
-
+/* Calendrier */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -190,8 +190,9 @@ a.bouton3:hover {
 
 .side {
     flex: 30%;
-    background-image: linear-gradient(to right,#d9d9d9,#a6a6a6);
+    background-image: linear-gradient(to right,#595959,#1a1a1a);
     padding: 20px;
+    color: #e6e6e6;
 }
 
 
@@ -203,7 +204,9 @@ a.bouton3:hover {
 .main h3{
     color: #FFFFFF;
 }
-ul {list-style-type: none;}
+ul {
+    list-style-type: none;
+}
 
 
 .month {
@@ -269,3 +272,6 @@ ul {list-style-type: none;}
     background: darkred;
     color: white !important
 }
+
+
+

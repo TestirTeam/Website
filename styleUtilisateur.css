@@ -178,19 +178,20 @@ a.bouton3:hover {
     display : inline-block;
 }
 
-
 * {
     box-sizing: border-box;
 }
 
 .column {
-    margin-top: 50px;
+    margin-top: 20px;
     float: left;
     width: 25%;
     padding: 0 10px;
 }
 
-.row {margin: 0 -5px;}
+.row {
+    margin: -20px -5px 0;
+}
 
 
 .card {
@@ -258,10 +259,33 @@ a.bouton3:hover {
 
 .bar-5 {width: 60%; height: 18px; background-color: #4CAF50;}
 .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
-.bar-3 {width: 40%; height: 18px; background-color: #00bcd4;}
-.bar-2 {width: 80%; height: 18px; background-color: #ff9800;}
-.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+.bar-3 {width: 40%; height: 18px; background-color: #9933ff;}
+.bar-2 {width: 86%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 71%; height: 18px; background-color: #f44336;}
 
-
-
-
+#thermometre{
+    width: 20%;
+    height: auto;
+    float: right;
+}
+#battement{
+    width: 20%;
+    height: auto;
+    float: right;
+}
+#oeil{
+    width: 20%;
+    height: auto;
+    float: right;
+}
+#son{
+    width: 20%;
+    height: auto;
+    float: right;
+}
+.titre2{
+    font-size: 25px;
+    margin-top: 40px;
+    color: white;
+    text-align: center;
+}
