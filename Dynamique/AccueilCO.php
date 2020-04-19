@@ -78,7 +78,7 @@ if(isset($_POST['formCo']))//Verification du click bouton
     <div id="co"></div>
 
     <div class="header">
-        <a href="../statique/PageAccueil.html#page-1" class="logo">
+        <a href="../Dynamique/PageAccueil.html#page-1" class="logo">
             <div class="igloo">
                 <img src="../Images/Logo%20Testir.png" alt="" id="imgTestirHeaderLogo"/>
                 <img src="../Images/TesTirBlanc....png" alt="" id="imgTestirHeader"/>

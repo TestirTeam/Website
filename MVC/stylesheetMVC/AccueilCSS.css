@@ -1,0 +1,106 @@
+/*****************CHANGEMENT GENERAL ********************/
+body{
+    margin:0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 710px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+   /* background-color: black;*/
+}
+scroll-page {
+    display: flex;
+    height: 105%;
+}
+
+#background{
+    position: absolute;
+    background-image: url("../../Images/fond.png");
+    background-position: center;
+    width : 100%;
+    height: 100%;
+    filter: blur(5 px) brightness(25%);
+    -webkit-filter: blur(5px) brightness(25%);
+}
+#MsgBienvenu{
+    position: absolute;
+    text-align: center;
+    padding-top: 20%;
+    padding-left: 38%;
+    color: #FFFFFF;
+    font-family: MuseoW01-900, serif;
+
+
+}
+#bvnTestir{
+    display: inline-flex;
+
+
+}
+#bvnsur{
+    font-min-size: 30px;
+
+}
+#imgTestirMsg{
+    padding-left: 40px;
+    align-self: center;
+    width: 30%;
+    height: auto;
+    
+}
+
+
+
+
+#imgserviceUP{
+ position: absolute;
+    bottom: 0;
+    margin-left: 15%;
+    z-index: 0;
+}
+#imgserviceDOWN{
+    position: static;
+    top: 0;
+    margin-left: 21.2%;
+}
+
+#imgnotrestart{
+    position: absolute;
+    width: 75%;
+    margin-top: 20%;
+    margin-left: 25%;
+
+}
+.nosclients{
+
+}
+#imgnosclients{
+
+    margin-top: 9%;
+    width: 75%;
+}
+
+
+
+
+
+
+@font-face {font-family: "Apple SD Gothic Neo"; src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot"); src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff") format("woff"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.svg#Apple SD Gothic Neo") format("svg"); }
+@font-face {font-family: "MuseoW01-900"; src: url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.eot"); src: url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.woff") format("woff"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.svg#MuseoW01-900") format("svg"); }
+
+
+
+#page-2{
+    position: page;
+    background: #000000;
+}
+#page-3{
+    position: page;
+    background: black;
+
+
+}
+
+
+

@@ -1,75 +1,10 @@
 <?php
-$db = new PDO("mysql:host=localhost;dbname=bdd_testir;port=3309", "root", "root");
+require("controllers/Inscription.php");
+require ("models/connexiondb.php");
 
 if(isset($_POST['formInscr']))/* detection si le bouton est pressé*/
 {
-    /*concatenation de condition pour eviter les mails similaire , valider en manquant des champs etc*/
-    if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND!empty($_POST['mail'])
-        AND!empty($_POST['mdp']) AND!empty($_POST['mdpc']))
-    {
-        /* recuperation du formulaire*/
-        $pseudo=htmlspecialchars($_POST['pseudo']);
-        $nom=htmlspecialchars($_POST['nom']);
-        $prenom=htmlspecialchars($_POST['prenom']);
-        $age=intval($_POST['age']);
-        $date=$_POST['daten'];
-        $pays=htmlspecialchars($_POST['pays']);
-        $adrs=htmlspecialchars($_POST['adrs']);
-        $mail=htmlspecialchars(($_POST['mail']));
-        $sexe=$_POST['sexe'];
-        $mdp=sha1($_POST['mdp']);
-        $mdpc=sha1($_POST['mdpc']);
-
-        $nomlen=strlen($nom);
-        $prenomlen=strlen($prenom);
-        /*on verifie que le pseudo n'est pas present deja dans la base de données */
-        $reqpseudo= $db->prepare('SELECT * FROM client WHERE pseudo= ?');
-        $reqpseudo->execute(array($pseudo));
-        $pseudoexist=$reqpseudo->rowCount();
-
-        if(isset($_POST['condition'])) {
-            if ($pseudoexist == 0) {
-
-                if ($prenomlen <= 50 || $nomlen <= 50) {
-
-                    if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-                        $reqmail = $db->prepare('SELECT * FROM client WHERE email="' . $mail . '"');
-                        $reqmail->execute();
-                        $mailexist = $reqmail->rowCount();
-
-                        if ($mailexist == 0) {
-
-                            if ($mdp == $mdpc) {
-                                $reponse = $db->prepare("INSERT INTO client(pseudo,nom,prenom,age,date,pays,adresse,sexe,email,mdp) 
-                                                                        values ('$pseudo','$nom', '$prenom','$age','$date','$pays','$adrs','$sexe','$mail','$mdp')");
-                                $reponse->execute();
-                                $error = 'Votre compte a été crée !';
-                                header('Location: http://http://localhost/WebsiteTestir/Website/Dynamique/PageAccueil.php');
-
-                            } else {
-                                $error = "Vos mots de passes ne correspondent pas !";
-                            }
-                        } else {
-                            $error = 'le mail entré existe déjà !';
-                        }
-
-                    } else {
-                        $error = "Veuillez entrer un mail valide !";
-                    }
-
-                } else {
-                    $error = "Votre nom ou prenom doit contenir moin de 50 caracteres !";
-                }
-            } else {
-                $error = "Le pseudo existe deja !";
-            }
-        }else{
-            $error="Veuillez accepter les conditions d'utilisation !";
-        }
-    }else{
-        $error="Tous les champs doivent etre completer !";
-
-    }
+    $response =checkInscription($db);
 
 }
 
@@ -78,7 +13,7 @@ if(isset($_POST['formInscr']))/* detection si le bouton est pressé*/
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../stylesheet/AccueilCSSInscr.css">
+    <link rel="stylesheet" href="stylesheetMVC/AccueilCSSInscr.css">
     <title>Testir</title>
 </head>
 <body>
@@ -89,8 +24,8 @@ if(isset($_POST['formInscr']))/* detection si le bouton est pressé*/
     <div id="inscrblanc">
         <h1 class="titreInscr">Inscription</h1>
         <?php
-        if(isset($error)){
-            echo $error;
+        if(isset($response)){
+            echo $response;
         }
         ?>
         <form method="post" action="">
@@ -138,21 +73,7 @@ if(isset($_POST['formInscr']))/* detection si le bouton est pressé*/
 
     <div id="inscr"></div>
 
-    <div class="header">
-        <a href="../statique/PageAccueil.html#page-1" class="logo">
-            <div class="igloo">
-                <img src="../Images/Logo%20Testir.png" alt="" id="imgTestirHeaderLogo"/>
-                <img src="../Images/TesTirBlanc....png" alt="" id="imgTestirHeader"/>
-            </div>
-        </a>
-        <div class="header-right">
-            <a href="../statique/PageAccueil.html#page-1">Accueil</a>
-            <a href="../statique/PageAccueil.html#page-2">Notre Start-up</a>
-            <a href="../statique/PageAccueil.html#page-3">Nos Services</a>
-            <a href=AccueilCO.php>Connexion</a>
-            <a href=AccueilCO.php>Inscription</a>
-        </div>
-    </div>
+    <?php require("header.php")?>
 
 </scroll-page>
 
