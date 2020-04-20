@@ -31,7 +31,7 @@
             <a href="modifUser" class="bouton1">Modifier</a>
         </div>
         <div class="Boutton">
-            <a href="https://www.google.fr/" class="bouton2">Test</a>
+            <a href="choix-test" class="bouton2">Test</a>
         </div>
         <div class="Boutton">
             <a href="https://www.google.fr/" class="bouton3">Aide</a>

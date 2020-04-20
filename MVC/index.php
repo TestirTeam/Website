@@ -37,6 +37,28 @@ if($url==''){
 
     require('views/mu_parametre.php');
 
+
+}elseif ($url[0]=='choix-test'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/choix_tests.php');
+
+
+}elseif ($url[0]=='test-son'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/test_son.php');
+
+}elseif ($url[0]=='test-cardiaque'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/test_cardiaque.php');
+
+}elseif ($url[0]=='test-temp'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/test_temp.php');
+
+}elseif ($url[0]=='test-vue'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/test_vue.php');
+
 }else{
     require('views/404error.php');
 }

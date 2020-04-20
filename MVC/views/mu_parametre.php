@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Paramètres de connexion et sécurité</title>
     <link rel="stylesheet" href="stylesheetMVC/mu_parametre.css" />
+    <title>Autres paramètres</title>
     <script src="https://kit.fontawesome.com/205308e2d5.js" crossorigin="anonymous"></script>
 </head>
 
@@ -13,7 +13,7 @@
 require('models/connexiondb.php');
 ?>
 
-<?php require('header.php')?>
+<?php require('header.php'); ?>
 
 <div class="row">
 
@@ -39,42 +39,15 @@ require('models/connexiondb.php');
     <div class="colonne droite">
 
         <div class="titre">
-            <h1>Paramètres de connexion et sécurité</h1>
+            <h1>Autres paramètres</h1>
         </div>
 
-        <form method="post" action="">
-            <div class="formulaire">
-                <fieldset class="motDePasse">
-                    <legend>Changer le mot de passe</legend>
-                    <p>
-                        <label for="mdpActuel">Mot de passe actuel</label>
-                        <input type="text" name="mdp" id="mdp"  value="*****"/> <br/>
+        <div class="informations">
+            <a id="cgu" href="CGU" target="_top">Voir les conditions d'utilisation</a>
 
-                        <label for="nvMdp">Nv mot de passe</label>
-                        <input type="text" name="mdp" id="mdp"  value="*****"/> <br/>
-
-                        <label for="nvMdp">Reconfirmer le mdp</label>
-                        <input type="text" name="mdp" id="mdp"  value="*****"/> <br/>
-                    </p>
-                    <input type=submit class="modifier" name="modifier" value="modifier">
-                </fieldset>
-
-                <fieldset class="identifiant">
-                    <legend>Changer d'identifiant de connexion</legend>
-                    <p>
-                        <label for="identifiant">Identifiant</label>
-                        <input type="text" id="identifiant"
-                               pattern=".+@globex.com" size="30" required>
-                    </p>
-                    <input type=submit class="modifier" name="modifier" value="modifier">
-                </fieldset>
-            </div>
-        </form>
-
-
-
+        </div>
     </div>
 </div>
-
 </body>
+
 </html>
