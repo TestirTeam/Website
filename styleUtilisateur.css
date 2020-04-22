@@ -189,6 +189,10 @@ a.bouton3:hover {
     padding: 0 10px;
 }
 
+.card:hover{
+    border: 2px solid #5d0013;
+}
+
 .row {
     margin: -20px -5px 0;
 }
