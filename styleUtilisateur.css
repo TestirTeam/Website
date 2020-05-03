@@ -230,7 +230,10 @@ a.bouton3:hover {
     margin-right: 25px;
     color: white;
 }
-
+.heading .description{
+    font-size: 15px;
+    margin-top: -18px;
+}
 .side {
     float: left;
     width: 15%;
@@ -261,11 +264,6 @@ a.bouton3:hover {
     color: white;
 }
 
-.bar-5 {width: 60%; height: 18px; background-color: #4CAF50;}
-.bar-4 {width: 34%; height: 18px; background-color: #2196F3;}
-.bar-3 {width: 42%; height: 18px; background-color: #9933ff;}
-.bar-2 {width: 86%; height: 18px; background-color: #ff9800;}
-.bar-1 {width: 71%; height: 18px; background-color: #f44336;}
 
 #thermometre{
     width: 20%;
