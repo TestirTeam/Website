@@ -1,3 +1,88 @@
+body
+{
+    background: url("Images/fond_testir.png") fixed rgba(112, 112, 112, 0.8);
+    background-size: cover;
+    margin:0
+}
+
+@font-face {font-family: "Apple SD Gothic Neo"; src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot"); src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff") format("woff"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.svg#Apple SD Gothic Neo") format("svg"); }
+@font-face {font-family: "Agency FB"; src: url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.eot"); src: url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.woff") format("woff"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.svg#Agency FB") format("svg"); }
+
+/* Style du header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: transparent;
+    font-family: "Apple SD Gothic Neo", serif;
+}
+
+/* Style des liens du header */
+.header a {
+    float: left;
+    color: #f8fff9;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 1px;
+    font-family: "Apple SD Gothic Neo", serif;
+}
+
+/* Style de la box qui contient le logo  */
+.header a.logo {
+    margin: 0;
+    padding: 2px;
+}
+
+/* Style des logo */
+#imgTestirHeader{
+    max-width: 30%;
+    height: auto;
+    margin-bottom: 2%;
+}
+
+#imgTestirHeaderLogo{
+    max-width: 20%;
+    height: auto;
+}
+
+/* Changement fond survole */
+.header a:hover {
+    background-color: #d10012;
+    color: #ffffff;
+}
+
+.header a:after {
+    background-color: #5d0013;
+    color: #ffffff;
+}
+
+.header-right {
+    float: right;
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+}
+
+
+
+
+
+
+
 nav ul{
     padding: 20px;
     margin: 10px;
