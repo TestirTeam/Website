@@ -7,14 +7,14 @@ catch(Exception $e){
     die("Erreur: " .$e->getMessage());
 }
 $reponse_id = $bdd->prepare ('SELECT `id_client` FROM client WHERE `email`= ?');
-$reponse_id->execute(array('paul.besrest@gmail.com'));
+$reponse_id->execute(array($_SESSION["mail"]));
 while ($donnees = $reponse_id->fetch())
 {
     $id_client=$donnees['id_client'];
 }
 $reponse_id->closeCursor();
 $resultats = $bdd->prepare ('SELECT * FROM resultats WHERE `id_client`=?');
-$resultats->execute(array($_SESSION["mail"]));
+$resultats->execute(array($_SESSION[$id_client]));
 
 while ($donnees = $resultats->fetch())
 {
