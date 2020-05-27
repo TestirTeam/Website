@@ -14,7 +14,7 @@ body:before {
     background-size: cover;
     z-index: -1; /* Keep the background behind the content */
     filter:contrast(100%);
-    -webkit-filter: blur(8px);
+    -webkit-filter: brightness(40%) blur(8px);
 
     -webkit-background-size: cover;
 }

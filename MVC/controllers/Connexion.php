@@ -1,6 +1,6 @@
 <?php
 
-
+require("models/userconnexion.php");
 
 function checkConnection($db){
         $mailpseuco=htmlspecialchars($_POST['mailpseuco']);
@@ -10,8 +10,7 @@ function checkConnection($db){
         if(!empty($_POST['mailpseuco']) AND !empty($_POST['mdpco'])){
 
 
-            $requserm= $db->prepare("SELECT * FROM client WHERE email= ? AND mdp= ?");
-            $requserm->execute(array($mailpseuco,$mdpco));
+            $requserm= selectUserCo($db,$mailpseuco,$mdpco);
             $usermexist= $requserm->rowCount();
             /* Pour utiliser le pseudo comme moyen de connection
             $requserp= $db->prepare('SELECT * FROM client WHERE pseudo= ? AND mdp= ?');
@@ -21,6 +20,7 @@ function checkConnection($db){
             if($usermexist==1 /*or $userpexist==1*/){
                 $userinfo=$requserm->fetch();//Recuperation des infos de l'user correspondant si la connexion est un succes
                 $_SESSION["pseudo"]=$userinfo['pseudo'];
+                $_SESSION["id"]=$userinfo['id_client'];
                 $_SESSION["nom"]=$userinfo['nom'];
                 $_SESSION["prenom"]=$userinfo['prenom'];
                 $_SESSION["age"]=$userinfo['age'];

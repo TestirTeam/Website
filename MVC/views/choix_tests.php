@@ -1,5 +1,5 @@
 <?php $title = 'Choix du test' ?>
-
+<?php require('header.php'); ?>
 
     <head>
 
@@ -8,7 +8,7 @@
         <title><?= $title ?></title>
 
     </head>
-    <?php require('header.php'); ?>
+
 
     <div class="tests">
 

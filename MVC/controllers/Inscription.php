@@ -1,4 +1,5 @@
 <?php
+require("models/userinscription.php");
 
 function checkInscription($db){
     /*concatenation de condition pour eviter les mails similaire , valider en manquant des champs etc*/
@@ -18,11 +19,11 @@ function checkInscription($db){
         $mdp=sha1($_POST['mdp']);
         $mdpc=sha1($_POST['mdpc']);
 
+
         $nomlen=strlen($nom);
         $prenomlen=strlen($prenom);
         /*on verifie que le pseudo n'est pas present deja dans la base de données */
-        $reqpseudo= $db->prepare('SELECT * FROM client WHERE pseudo= ?');
-        $reqpseudo->execute(array($pseudo));
+        $reqpseudo= selectUserPseudo($db,$pseudo);
         $pseudoexist=$reqpseudo->rowCount();
 
         if(isset($_POST['condition'])) {
@@ -31,16 +32,13 @@ function checkInscription($db){
                 if ($prenomlen <= 50 || $nomlen <= 50) {
 
                     if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-                        $reqmail = $db->prepare('SELECT * FROM client WHERE email="' . $mail . '"');
-                        $reqmail->execute();
+                        $reqmail = selectUserMail($db,$mail);
                         $mailexist = $reqmail->rowCount();
 
                         if ($mailexist == 0) {
 
                             if ($mdp == $mdpc) {
-                                $reponse = $db->prepare("INSERT INTO client(pseudo,nom,prenom,age,date,pays,adresse,sexe,email,mdp) 
-                                                                        values ('$pseudo','$nom', '$prenom','$age','$date','$pays','$adrs','$sexe','$mail','$mdp')");
-                                $reponse->execute();
+                                $reponse = insertUserInfo($db,$pseudo,$nom, $prenom,$age,$date,$pays,$adrs,$sexe,$mail,$mdp);
                                 header('Location: http://localhost/WebsiteTestir/Website/MVC/index.php');
                                  return $error = 'Votre compte a été crée !';
 

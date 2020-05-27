@@ -54,8 +54,8 @@ scroll-page {
 
 
 #imgserviceUP{
- position: absolute;
-    bottom: 0;
+    position: absolute;
+    bottom: -50px;
     margin-left: 15%;
     z-index: 0;
 }

@@ -13,7 +13,7 @@ body:before {
     background: url("../../Images/fond.png");
     background-size: cover;
     z-index: -1; /* Keep the background behind the content */
-    -webkit-filter: blur(5px);
+    -webkit-filter: brightness(40%) blur(8px);
     -webkit-background-size: cover;
 }
 /* style du header */

@@ -1,6 +1,5 @@
-<?php
 
-?>
+<?php require('header.php')?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,7 +26,7 @@
         <img src="../Images/serviceUP.png" alt="" id="imgserviceUP" />
     </div>
 
-    <?php require('header.php')?>
+
 
 
 
@@ -48,11 +47,12 @@
     <div class="nosclients">
         <img src="../Images/nosclients.png" alt="" id="imgnosclients" />
     </div>
-    <?php require('footer.php') ?>
+
 </scroll-page>
 
 
 
 
 </body>
+<?php require('footer.php') ?>
 </html>

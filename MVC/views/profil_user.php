@@ -34,7 +34,7 @@
             <a href="choix-test" class="bouton2">Test</a>
         </div>
         <div class="Boutton">
-            <a href="https://www.google.fr/" class="bouton3">Aide</a>
+            <a href="formulaire-aide" class="bouton3">Aide</a>
         </div>
     </section>
 </div>
@@ -144,6 +144,6 @@
     </div>
 </div>
 </div>
-<?php require('footer.php')?>
+
 </body>
 </html>

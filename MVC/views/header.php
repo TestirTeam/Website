@@ -20,7 +20,9 @@
         <?php  if(isset($_SESSION['mail'])):     ?>
             <!-- On change le header en consequences -->
             <a href=monProfil>Mon Profil</a>
+            <a href=messagerie-envoi>Messagerie</a>
             <a href=deconnexion>Déconnexion</a>
+
 
         <?php  else:     ?>
             <!-- Sinon on laisse la possibilité de se connecter-->

@@ -25,7 +25,7 @@
             <div class="image">
                 <img class="image_fond" src="../Images/cardiaque.jpg" alt="">
             </div>
-            <a href="#" class="fomrulaire_button">Acceder au formulaire du test</a>
+            <a href="formulaire-test" class="fomrulaire_button">Acceder au formulaire du test</a>
         </div>
     </div>
 

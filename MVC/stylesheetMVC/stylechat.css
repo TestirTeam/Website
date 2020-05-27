@@ -1,0 +1,102 @@
+body{
+    padding :0;
+    margin:0;
+    height: 200%;
+    width: 100%;
+    background-color: #000000;
+    font-family:Arial;
+}
+h1,h2,p{
+    text-align:center;
+color: #FFFFFF}
+
+#div-connexion{
+    height: 200%;
+    border: 5px solid #ff0b00;
+}
+#main-wrapper{
+    background-color: black;
+    margin:auto;}
+			
+#message{
+    background-color:#f3f2f7;
+    padding:0 10px;
+    height:300px;
+    width:100%;
+    box-sizing: border-box;
+    border-radius:5px;
+    overflow-y:scroll;
+    border:1px solid #cccccc;}
+#utilisateur{
+    list-style:none;
+    padding:0;
+    background-color:#f3f2f7;
+    height:100px;
+    width:100%;
+    box-sizing:border-box;
+    border-radius:5px;
+    overflow-y:scroll;
+    margin-bottom:10px;
+    border:1px solid #cccccc;}
+#send{
+    margin-top:10px;
+    width:100%;
+    padding:5px;
+    border-radius:5px;
+    border:1px solid #cccccc;
+    box-sizing:border-box;}
+
+.message{
+    border-bottom:1px solid #cccccc;
+    padding:10px 0;
+    font-size:0.9em;}
+.message img{
+    float:left;
+    margin-top:-5px;
+    margin-right:5px;}
+.utilisateur{
+    padding:5px;
+    font-size:0.9em;}
+.utilisateur{
+    color:#3e3e3e;
+    cursor:default;}
+.utilisateur:hover{
+    cursor:pointer;
+    background-color:#cccccc !important;}
+.utilisateur:nth-child(2n+2){
+    background-color:#ffffff;}
+.utilisateur .usr{
+    width:100%;
+    padding-right:5px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;}
+.utilisateur .usr img{
+    float:left;
+    margin-right:5px;}
+.utilisateur-action{
+    position:absolute;
+    box-shadow:1px 1px 3px #cccccc;
+    padding:5px;
+    background-color:#ffffff;
+    border-radius:5px;}
+.utilisateur-action-close{
+    position:absolute;
+    left:130px;
+    top:0px;}
+				
+.button{
+    cursor:pointer;
+    padding:10px 15px;
+    font-weight:bold;
+    border-radius:5px;
+    color:#ffffff;
+    border:0px;
+    background: #5d0013;
+    box-sizing:border-box;
+    text-align:center;
+    text-decoration:none;}
+.button-blue:hover{
+    background: #fa0016;}
+				
+.clear{clear:both;}

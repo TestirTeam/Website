@@ -59,6 +59,22 @@ if($url==''){
 
     require('views/test_vue.php');
 
+}elseif ($url[0]=='formulaire-aide'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/formulaireAide.php');
+
+}elseif ($url[0]=='formulaire-test'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/formulaireTest.php');
+
+}elseif ($url[0]=='messagerie-envoi'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/envoi.php');
+
+}elseif ($url[0]=='messagerie-reception'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/reception.php');
+
 }else{
     require('views/404error.php');
 }
