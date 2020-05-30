@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="stylesheetMVC/header.css">
 </head>
-<div class="header">
+<header>
     <a href="#page-3" class="logo">
         <div class="igloo">
             <img src="../Images/Logo%20Testir.png" alt="" id="imgTestirHeaderLogo"/>
@@ -30,5 +30,5 @@
             <a href=inscription>Inscription</a>
         <?php  endif;    ?>
     </div>
-</div>
+</header>
 </html>

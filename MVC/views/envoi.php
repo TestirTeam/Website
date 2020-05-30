@@ -13,31 +13,50 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 </head>
 <body>
 
+<div class="corps">
+    <div class="rectangle1"> </div>
+    <div class="demande">
+        <h1> Messagerie Testir </h1>
+        <b><p class="prems"> <?= $_SESSION["pseudo"] ?> bienvenue dans votre boite d'envoi </p></b>
+        <p class="prems"> Veuillez utiliser la saisie ci-dessous pour envoyer un message !</p>
+        <div class="rectangle2"> </div>
 
-<form method="POST">
-    <div class="envoie">
-        <a href="messagerie-reception"> Boite de reception</a>
-        <br><br><br>
-        <label> Destinataire : </label>
+    </div >
+    <form method="POST">
+        <div class="envoie">
+            <a href="messagerie-reception"> Boite de reception</a>
+            <br><br><br>
+            <label> Destinataire : </label>
 
-        <select name="destinataire">
-            <?php while ($d = $destinataire->fetch()) { ?>
-                <option><?= $d['pseudo'] ?></option>
-            <?php } ?>
-            <option>Admin</option>
-        </select>
-        <br/><br/>
-        <textarea name="message">
+            <input name="destinataire" class="chosen-value" type="text" value="" placeholder="Taper pour filtrer">
+            <ul class="value-list">
+                <li>Admin</li>
+                <?php while ($d = $destinataire->fetch()) { ?>
+                    <li><?= $d['pseudo'] ?></li>
+                <?php } ?>
+            </ul>
+
+            <br/><br/>
+            <textarea name="message">
         </textarea>
-        <br/><br/>
-        <input type="submit" value="Envoyer" name="envoi_btn">
-        <br/><br/>
-        <label class="error"><?php if (isset($error)) {
-                echo $error;
-            } ?></label>
+            <br/><br/>
+            <div class="boutons"><a href="#">
+                    <p>
+                        <span class="bg"></span>
+                        <span class="base"></span>
+                        <input class="texte" type="submit" value="Envoyer" name="envoi_btn">
+                    </p>
+                </a>
+            </div>
+            <br/><br/>
+            <label class="error"><?php if (isset($error)) {
+                    echo $error;
+                } ?></label>
 
-    </div>
-</form>
+        </div>
+    </form>
+</div>
+
 
 
 </body>
@@ -45,3 +64,4 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     <?php
 }
     ?>
+<script src="javascript/select.js"></script>

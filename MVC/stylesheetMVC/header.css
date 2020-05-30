@@ -4,18 +4,18 @@
 
 
 
-.header {
+header {
     width: 100%;
-    display: inline-block;
-    overflow: hidden;
     position: fixed;
+    top: 0;
+    overflow: hidden;
     background-color: #000000;
     padding: 0 10px;
     z-index: 8;
 }
 
 /* Style des liens du header */
-.header a {
+header a {
     float: left;
     color: #f8fff9;
     text-align: center;
@@ -29,7 +29,7 @@
 }
 
 /* Style de la box qui contient le logo  */
-.header a.logo {
+header a.logo {
     box-sizing: content-box;
     margin-top:  0.5%;
     padding: 0;
@@ -48,13 +48,13 @@
 }
 
 /* changement fond survole */
-.header a:hover {
+header a:hover {
     background-color: #d10012;
     color: #ffffff;
 }
 
 
-.header a:focus {
+header a:focus {
     background-color: #5d0013;
     color: #ffffff;
 }
