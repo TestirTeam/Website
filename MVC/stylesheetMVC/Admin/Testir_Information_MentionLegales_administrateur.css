@@ -1,0 +1,186 @@
+
+
+	/* FOND DE PAGE */
+
+body {
+	background: rgb(10,10,10);
+	height: auto;
+	margin: 0px;
+}
+
+
+	/* Navigation site */
+
+header {
+	height: 8%;
+	width: 100%;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+}
+
+header img{
+	height: 100px;
+	width: auto;
+}
+#logo {
+	margin-top: 20px;
+}
+
+header ul {
+	height: 100%;
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+}
+
+header a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	padding: 5px;
+	border-radius: 5px;
+}
+header a:hover {
+	background-color: #d10012;
+}
+
+#sousHeader{
+	height: 8%;
+	width: 100%;
+}
+
+	/* Navigation Administrateur */
+
+nav{
+	height: 8%;
+	width: 100%;
+	background: url('C:/Users/paulb/Pictures/Image_Testir/fondBalleOpaque.png') no-repeat;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav h2{
+	color: white;
+	margin-left: 5%;
+}
+nav ul{
+	height: 100%;
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+}
+nav a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	padding: 5px;
+	border-radius: 5px;
+}
+nav a:hover{
+	color: red;
+}
+
+	/* Contenu */
+
+section{
+	height: auto;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+#banniere{
+	height: 110px;
+	width: 90%;
+	background: rgb(10,10,10);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 20px;
+}
+#banniere h1{
+	font-size: 40px;
+	color: white;
+	text-align: center;
+}
+.rectangle_blanc{
+	height: 10px;
+	width: 20%;
+	background-color: white;
+}
+
+
+#boutonAnnuler{
+	width: 80%;
+	height: 150px;
+	background: linear-gradient(red, #510508);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 50px;
+}
+#boutonAnnuler h2{
+	font-size: 50px;
+	text-align: center;
+	color: black;
+	text-shadow: 1px 1px 2px white, -1px 1px 2px white, 1px -1px 2px white, -1px -1px 2px white;
+}
+#boutonAnnuler:hover{
+	border-style: inset;
+	cursor: pointer;
+}
+
+
+
+#ml{
+	height: auto;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: brown;
+	border: solid 3px #707070;
+	margin-bottom: 100px;
+}
+#ml h3{
+	text-decoration: underline;
+	text-decoration-color: black;
+}
+
+
+#nouvellesML{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90%;
+	padding-bottom: 20px;
+}
+#nouvellesML h2{
+	color: white;
+	font-size: 30px;
+}
+
+#formNouvellesML{
+	height: 500px;
+	width: 100%;
+}
+#submit{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}

@@ -7,10 +7,10 @@ function selectDestinataire($db,$destinataire){
     return array($response,$destexist);
 }
 
-function insertMsg($db,$id_desti,$message){
-
-    $response=$db->prepare('INSERT INTO testir_chat(id_expediteur,id_destinataire,message) VALUES (?,?,?)');
-    $response->execute(array($_SESSION['id'], $id_desti, $message));
+function insertMsg($db,$id_desti,$message,$objet){
+    $lu=0;
+    $response=$db->prepare('INSERT INTO testir_chat(id_expediteur,id_destinataire,objet,message,lu) VALUES (?,?,?,?,?)');
+    $response->execute(array($_SESSION['id'], $id_desti, $objet,$message,$lu));
 
     return $response;
 }

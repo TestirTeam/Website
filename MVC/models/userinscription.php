@@ -10,8 +10,10 @@ function selectUserMail($db,$mail){
     return $reponse;
 }
 function insertUserInfo($db,$pseudo,$nom, $prenom,$age,$date,$pays,$adrs,$sexe,$mail,$mdp){
-    $reponse = $db->prepare("INSERT INTO client(pseudo,nom,prenom,age,date,pays,adresse,sexe,email,mdp) 
-                                                                        values ('$pseudo','$nom', '$prenom','$age','$date','$pays','$adrs','$sexe','$mail','$mdp')");
+    $admin=0;
+    $examinateur=0;
+    $reponse = $db->prepare("INSERT INTO client(admin,examinateur,pseudo,nom,prenom,age,date,pays,adresse,sexe,email,mdp) 
+                                                                        values ('$admin','$examinateur','$pseudo','$nom', '$prenom','$age','$date','$pays','$adrs','$sexe','$mail','$mdp')");
     $reponse->execute();
 }
 

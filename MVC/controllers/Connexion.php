@@ -20,6 +20,7 @@ function checkConnection($db){
             if($usermexist==1 /*or $userpexist==1*/){
                 $userinfo=$requserm->fetch();//Recuperation des infos de l'user correspondant si la connexion est un succes
                 $_SESSION["pseudo"]=$userinfo['pseudo'];
+                $_SESSION['admin']=$userinfo['admin'];
                 $_SESSION["id"]=$userinfo['id_client'];
                 $_SESSION["nom"]=$userinfo['nom'];
                 $_SESSION["prenom"]=$userinfo['prenom'];

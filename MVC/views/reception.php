@@ -27,15 +27,33 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
 
 <div class="boitemsg">
-    <a href="messagerie-envoi"> Boite d'envoi</a>
-    <br /><br />
+    <div class="boxenvoi">
+        <img src="../Images/message/gmail.png" class="boxmail">
+        <a href="messagerie-envoi" class="a-envoi"> <p class="p-envoi">Boite d'envoi</p></a>
+    </div>
+    <br />
 
     <?php while($m=$msg->fetch()){
     $pexp= showPseudoDesti($db,$m['id_destinataire'])
     ?>
-    <b><?= $pexp ?></b> vous a envoyé :
+        <form id="my_form" method="POST" action="lectureMsg">
+            <?php if($m['lu']==1){ ?>
+            <span style="color: gray">
+            <?php }?>
+
+
+            <b><?= $pexp ?></b> vous a envoyé
+                <input type="hidden" name="idmsg" id="idmsg" value=<?=$m['id']?>>
+                <input type=submit  value="ce message" >
+                </br>
+                <label>-------------------------------------------------------------</label>
+                </br>
+                <b>Objet :</b> <?= $m['objet'] ?>
+            <?php if($m['lu']==1){ ?>
+            </span>
+            <?php }?>
+        </form>
     <br /><br />
-    <?= nl2br($m['message']) ?>
     <br />
 
     <?php }?>

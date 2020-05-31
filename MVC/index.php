@@ -75,6 +75,18 @@ if($url==''){
 
     require('views/reception.php');
 
+}elseif ($url[0]=='lectureMsg'AND empty($url[1])AND isset($_SESSION['mail'])){
+
+    require('views/lecture.php');
+
+}elseif ($url[0]=='supprimer'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('controllers/supprimerMsg.php');
+
+}elseif ($url[0]=='administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Admin/Testir_Accueil_administrateur.php');
+
 }else{
     require('views/404error.php');
 }

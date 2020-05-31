@@ -1,0 +1,288 @@
+
+
+	/* FOND DE PAGE */
+
+body {
+	background: rgb(10,10,10);
+	height: auto;
+	margin: 0px;
+}
+
+
+	/* Navigation site */
+
+header {
+	height: 8%;
+	width: 100%;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+}
+
+header img{
+	height: 100px;
+	width: auto;
+}
+#logo {
+	margin-top: 20px;
+}
+
+header ul {
+	height: 100%;
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+}
+
+header a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	padding: 5px;
+	border-radius: 5px;
+}
+header a:hover {
+	background-color: #d10012;
+}
+
+#sousHeader{
+	height: 8%;
+	width: 100%;
+}
+
+	/* Navigation Administrateur */
+
+nav{
+	height: 8%;
+	width: 100%;
+	background: url('C:/Users/paulb/Pictures/Image_Testir/fondBalleOpaque.png') no-repeat;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav h2{
+	color: white;
+	margin-left: 5%;
+}
+nav ul{
+	height: 100%;
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+}
+nav a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	padding: 5px;
+	border-radius: 5px;
+}
+nav a:hover{
+	color: red;
+}
+
+	/* Contenu */
+
+article {
+	height: auto;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+#menuTest{
+	height: auto;
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+}
+
+#rechercheTest{
+	height: 120px;
+	width: 100%;
+	background-color: #720202;
+	border: solid 3px #707070;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#formTest{
+	font-size: 25px;
+}
+
+#listeTest{
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(#720202, #CC7F7F);
+	border: solid 3px #707070;
+	border-top: none;
+	display: flex;
+	flex-direction: column;
+}
+#listeTest h2{
+	text-decoration: underline;
+	text-align: center;
+}
+#listeTest ul{
+	padding-left: 20%;
+	font-size: 20px;
+}
+#listeTest li{
+	margin-bottom: 10px;
+	color: black;
+}
+#listeTest li:hover{
+	color: red;
+}
+#listeTest a{
+	text-decoration: none;
+}
+#listeTest a:hover{
+	text-decoration: underline;
+	color: red;
+}
+
+
+#contenu{
+	height: 100%;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+#banniere{
+	height: 110px;
+	width: 90%;
+	background: rgb(10,10,10);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 20px;
+}
+#banniere h1{
+	font-size: 40px;
+	color: white;
+	align-content: center;
+}
+.rectangle_blanc{
+	height: 10px;
+	width: 20%;
+	background-color: white;
+}
+
+
+#boutonRetour{
+	width: 80%;
+	height: 150px;
+	background: linear-gradient(red, #510508);
+	margin-bottom: 50px;
+}
+#boutonRetour h2{
+	font-size: 50px;
+	text-align: center;
+	color: black;
+	text-shadow: 1px 1px 2px white, -1px 1px 2px white, 1px -1px 2px white, -1px -1px 2px white;
+}
+#boutonRetour:hover{
+	border-style: inset;
+	cursor: pointer;
+}
+
+#ensembleTest{
+	height: auto;
+	width: 80%;
+}
+
+.test{
+	width: 100%;
+	height: auto;
+	background-color: #720202;
+	border: solid 3px #707070;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+
+#NomTest{
+	height: 10%;
+	width: 90%;
+	background-color: #720202;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#NomTest h3{
+	font-size: 50px;
+	color: white;
+	text-decoration: underline;
+}
+#imageTest {
+	height: 10%;
+	width: 70%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+#imageTaille{
+	height: 500px;
+	width: 500px;
+}
+
+#fonctionnaliteTest{
+	height: 40%;
+	width: 90%;
+	border: solid 3px #707070;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+}
+#fonctionnaliteTest h3{
+	font-size: 40px;
+	color: white;
+}
+#fonctionnalite {
+	font-size: 25px;
+}
+
+#programmeTest{
+	height: 40%;
+	width: 90%;
+	border: solid 3px #707070;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+}
+#programmeTest h3{
+	font-size: 40px;
+	color: white;
+}
+#programme {
+	font-size: 25px;
+}
+
+
+
+
+
+
+

@@ -24,7 +24,11 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     </div >
     <form method="POST">
         <div class="envoie">
-            <a href="messagerie-reception"> Boite de reception</a>
+            <div class="boxenvoi">
+                <img src="../Images/message/gmail.png" class="boxmail">
+                <a href="messagerie-reception" class="a-recep"> <p class="p-recep">Boite de reception</p></a>
+            </div>
+
             <br><br><br>
             <label> Destinataire : </label>
 
@@ -36,6 +40,11 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
                 <?php } ?>
             </ul>
 
+            <br/><br/>
+            <div id="objet">
+                <label> Objet : </label>
+                <input type="text" name="objet" id="input-objet">
+            </div>
             <br/><br/>
             <textarea name="message">
         </textarea>

@@ -22,6 +22,55 @@ textarea{
     height: 300px;
 }
 
+/* STYLE LIEN BOITE RECEPTION*/
+
+.boxmail{
+
+    height: 40px;
+}
+
+.p-recep {
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    background: linear-gradient(to bottom, #5d0013, #ff0600 60%, #ff0600 60%, #ffffff 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-repeat: no-repeat;
+    transition: background 0.2s ease-out;
+    white-space: nowrap;
+}
+
+.a-recep {
+    position: relative;
+}
+
+.a-recep:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: #ff0600;
+    bottom: 9px;
+    transition: all 0.2s ease-out;
+}
+
+.p-recep:hover {
+    background-position: 0 11px;
+}
+
+.a-recep:hover:before {
+    transform: translateY(10px)
+}
+
+#input-objet{
+    width: 29%;
+}
+.boxmail{
+}
 .envoie{
 
     margin:0;
@@ -241,7 +290,7 @@ input[type="submit"]
     color: #333;
 }
 .chosen-value:hover {
-    background-color: #FF908B;
+    background-color: #ff4655;
     cursor: pointer;
 }
 .chosen-value:hover::-webkit-input-placeholder {
@@ -250,7 +299,7 @@ input[type="submit"]
 .chosen-value:focus, .chosen-value.open {
     box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
     outline: 0;
-    background-color: #FF908B;
+    background-color: #ff4655;
     color: #000;
 }
 .chosen-value:focus::-webkit-input-placeholder, .chosen-value.open::-webkit-input-placeholder {
@@ -294,7 +343,7 @@ input[type="submit"]
 
 }
 .value-list li:hover {
-    background-color: #FF908B;
+    background-color: #ff4655;
 }
 .value-list li.closed {
     max-height: 0;

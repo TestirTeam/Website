@@ -17,13 +17,16 @@
         <a href="index.php#page-2">Notre Start-up</a>
         <a href="index.php#page-3">Nos Services</a>
         <!-- Si on detecte une variable mail dans la session c'est qu'il y a connexion-->
-        <?php  if(isset($_SESSION['mail'])):     ?>
+        <?php  if(isset($_SESSION['mail'])AND $_SESSION['admin']==0):     ?>
             <!-- On change le header en consequences -->
             <a href=monProfil>Mon Profil</a>
             <a href=messagerie-envoi>Messagerie</a>
             <a href=deconnexion>Déconnexion</a>
 
-
+        <?php  elseif(isset($_SESSION['admin']) AND $_SESSION['admin']==1):     ?>
+            <a href=administrateur>Admin</a>
+            <a href=messagerie-envoi>Messagerie</a>
+            <a href=deconnexion>Déconnexion</a>
         <?php  else:     ?>
             <!-- Sinon on laisse la possibilité de se connecter-->
             <a href=connexion>Connexion</a>
