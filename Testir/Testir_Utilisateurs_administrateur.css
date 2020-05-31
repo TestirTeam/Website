@@ -1,0 +1,384 @@
+
+
+	/* FOND DE PAGE */
+
+body {
+	background: rgb(10,10,10);
+	height: auto;
+	margin: 0px;
+}
+
+
+	/* Navigation site */
+
+header {
+	height: 8%;
+	width: 100%;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: black;
+}
+
+header img{
+	height: 100px;
+	width: auto;
+}
+#logo {
+	margin-top: 20px;
+}
+
+header ul {
+	height: 100%;
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+}
+
+header a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	padding: 5px;
+	border-radius: 5px;
+}
+header a:hover {
+	background-color: #d10012;
+}
+
+#sousHeader{
+	height: 8%;
+	width: 100%;
+}
+
+	/* Navigation Administrateur */
+
+nav{
+	height: 8%;
+	width: 100%;
+	background: url('C:/Users/paulb/Pictures/Image_Testir/fondBalleOpaque.png') no-repeat;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav h2{
+	color: white;
+	margin-left: 5%;
+}
+nav ul{
+	height: 100%;
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+}
+nav a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	padding: 5px;
+	border-radius: 5px;
+}
+nav a:hover{
+	color: red;
+}
+
+
+	/* Contenu */
+
+section{
+	height: auto;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+#MenuUtilisateur{
+	height: auto;
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+}
+#rectangle_rouge{
+	height: 100px;
+	width: 100%;
+	background-color: #720202;
+	border: solid 3px #707070;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+form {
+	margin: 0px;
+}
+#rechercheUtilisateur{
+	font-size: 25px;
+}
+#listeUtilisateur{
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(#720202, #CC7F7F);
+	border: solid 3px #707070;
+	border-top: none;
+	display: flex;
+	flex-direction: column;
+}
+#listeUtilisateur h2{
+	text-decoration: underline;
+	text-align: center;
+}
+#listeUtilisateur ul{
+	padding-left: 20%;
+}
+#listeUtilisateur li{
+	width: 50%;
+	margin-bottom: 10px;
+	color: black;
+}
+#listeUtilisateur li:hover{
+	color: red;
+}
+
+.submit{
+	border: 0;
+	background : none;
+	margin-left: 10px;
+	width: auto;
+	font-size: 20px;
+}
+.submit:hover{
+	text-decoration: underline;
+	color: red;
+	cursor: pointer;
+}
+
+
+
+#partie_centrale{
+	height: 100%;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#banniere{
+	height: 110px;
+	width: 90%;
+	background: rgb(10,10,10);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 20px;
+}
+#banniere h1{
+	font-size: 40px;
+	color: white;
+	align-content: center;
+}
+.rectangle_blanc{
+	height: 10px;
+	width: 20%;
+	background-color: white;
+}
+
+
+
+#renseignement_utilisateur{
+	display: flex;
+	height: 500px;
+	width: 90%;
+}
+#photo{
+	height: 100%;
+	width: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 10px;
+}
+
+#information_personelle{
+	height: 100%;
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+}
+#information_personelle div{
+	height: 30px;
+	width: 80%;
+	margin: 3px;
+	padding-left: 10px; 
+	margin-bottom: 10px;
+	border: solid #707070;
+	border-radius: 10px;
+	border-width: medium;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	color: white;
+}
+#information_personelle h2 {
+	font-size: 20px;
+	color: #707070;
+	margin: 5px; 
+}
+
+#bas{
+	height: 500px;
+	width: 90%;
+	border: solid #C20202;
+	border-width: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#bas h2{
+	font-size: 30px;
+	color: white;
+	margin: 10px;
+}
+#tableau{
+	color: #707070;
+	border-collapse: collapse;
+	background-color: #201F1F;
+	height: 80%;
+	width: 90%;
+	font-size: 20px;
+}
+#tableau td {
+	border: solid #707070;
+}
+#sous_titres{
+	text-align: center;
+	height: 40px;
+	font-size: 25px;
+}
+.date{
+	width: 150px;
+	text-align: center;
+}
+.type{
+	width: 150px;
+	text-align: center;
+}
+.objet{
+	padding-left: 10px;
+}
+
+
+
+#partie_droite{
+	height: auto;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+
+#gestion_utilisateur{
+	height: 500px;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 110px;
+	margin-bottom: 10px;
+}
+
+.optionUtilisateur{
+	width: 90%;
+	height: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bouton{
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(red, #510508);
+	border-radius: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+}
+.bouton:hover{
+	border-style: inset;
+	cursor: pointer;
+}
+
+
+#informations_forum {
+	height: 500px;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+#informations_forum h2{
+	color: white;
+	font-size: 30px;
+	margin: 5px;
+}
+#pouces {
+	width: 80%;
+	height: 80px;
+	border: solid 2px grey;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 30px;
+	color: #707070;
+}
+#pouce_bleu img{
+	height: 50px;
+	width: auto;
+	margin: 10px;
+}
+#pouce_rouge img{
+	height: 50px;
+	width: auto;
+	margin: 10px;
+}
+
+#commentaires {
+	background-color: #707070;
+	height: 350px;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#commentaires form{
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#zoneCommentaire{
+	height: 250px;
+	width: 90%;
+}
+
+
+
+
+
+/* centrer les formulaires */
