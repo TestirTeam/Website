@@ -1,0 +1,78 @@
+/*********************** STYLE DU HEADER ******************/
+@font-face {font-family: "Apple SD Gothic Neo"; src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot"); src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff") format("woff"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.svg#Apple SD Gothic Neo") format("svg"); }
+@font-face {font-family: "MuseoW01-900"; src: url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.eot"); src: url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.woff") format("woff"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4cc9d692753925335e7af83ecf6e6815.svg#MuseoW01-900") format("svg"); }
+
+
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    background-color: #000000;
+    padding: 0 10px;
+    z-index: 8;
+}
+
+/* Style des liens du header */
+header a {
+    float: left;
+    color: #f8fff9;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Apple SD Gothic Neo", serif;
+    line-height: 25px;
+    border-radius: 2px;
+
+}
+
+/* Style de la box qui contient le logo  */
+header a.logo {
+    box-sizing: content-box;
+    margin-top:  0.5%;
+    padding: 0;
+}
+/* style des logo */
+#imgTestirHeader{
+    max-width: 30%;
+    height: auto;
+    margin-bottom: 2%;
+
+}
+#imgTestirHeaderLogo{
+    max-width: 20%;
+    height: auto;
+
+}
+
+/* changement fond survole */
+header a:hover {
+    background-color: #d10012;
+    color: #ffffff;
+}
+
+
+header a:focus {
+    background-color: #5d0013;
+    color: #ffffff;
+}
+
+.header-right {
+    float: right;
+
+
+}
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+
+}

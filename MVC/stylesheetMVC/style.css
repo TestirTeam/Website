@@ -1,0 +1,196 @@
+body
+{
+    background: url("../../Images/fond_testir.png") fixed rgba(112, 112, 112, 0.8);
+    background-size: cover;
+    margin:0
+}
+
+@font-face {font-family: "Apple SD Gothic Neo"; src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot"); src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff") format("woff"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.svg#Apple SD Gothic Neo") format("svg"); }
+@font-face {font-family: "Agency FB"; src: url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.eot"); src: url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.woff") format("woff"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.svg#Agency FB") format("svg"); }
+
+
+.tests {
+    display: flex;
+    flex-direction: row;
+    justify-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    padding-top: 200px;
+}
+
+
+.tests .overlay-image_temperature .hover_bq {
+     position: absolute;
+     top: 0;
+     opacity: 0;
+     transition: .5s ease;
+     padding-top: 200px;
+     box-sizing: border-box;
+     height: 0;
+     width: 0;
+ }
+
+.tests .overlay-image_temperature:hover .hover_bq {
+    opacity: 1;
+}
+
+.tests .overlay-image_cardiaque .hover_bq {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: .5s ease;
+    padding-top: 200px;
+    box-sizing: border-box;
+    height: 0;
+    width: 0;
+}
+
+.tests .overlay-image_cardiaque:hover .hover_bq {
+    opacity: 1;
+}
+
+.tests .overlay-image_sonore .hover_bq {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: .5s ease;
+    padding-top: 200px;
+    box-sizing: border-box;
+    height: 0;
+    width: 0;
+}
+
+.tests .overlay-image_sonore:hover .hover_bq {
+    opacity: 1;
+}
+
+.tests .overlay-image_vue .hover_bq {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: .5s ease;
+    padding-top: 200px;
+    box-sizing: border-box;
+    height: 0;
+    width: 0;
+}
+
+.tests .overlay-image_vue:hover .hover_bq {
+    opacity: 1;
+}
+
+
+
+.mosaic {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: white;
+    color: #707070;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 45px;
+    font-family: "Agency FB", serif;
+    border: 1px solid #707070;
+    box-sizing: border-box;
+}
+
+.mosaic a {
+    display: flex;
+    text-decoration: none;
+    color: #707070;
+    border: 1px solid #707070;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.mosaic a:hover {
+    background-color: #707070;
+    color: white;
+}
+
+.sidebar_infos {
+    display: flex;
+    opacity: 0.7;
+    flex-direction: column;
+    color: #707070;
+    font-family: "Agency FB", serif;
+    width: 23%;
+    height: 100%;
+    float: left;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.title_sidebar {
+    margin-top: 15px;
+    font-size: 45px;
+}
+
+.infos_sidebar_vue {
+    font-size: 25px;
+    padding-bottom: 140px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.infos_sidebar_cardiaque {
+    font-size: 25px;
+    padding-bottom: 231px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.infos_sidebar_son {
+    font-size: 25px;
+    padding-bottom: 260px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.infos_sidebar_temp {
+    font-size: 25px;
+    padding-bottom: 227px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.body {
+    width: 75%;
+    height: 100%;
+    float: right;
+    background-color: white;
+}
+
+.image_fond {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border: 1px solid #707070;
+    filter: grayscale(90%);
+ }
+
+
+.page_test {
+    padding-top: 100px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    font-family: "Apple SD Gothic Neo", serif;
+    color: white;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+}
+

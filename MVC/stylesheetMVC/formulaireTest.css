@@ -1,0 +1,53 @@
+
+body {background-color: black;
+    color : #ffffff;
+}
+.profil-img img{
+    margin-top: 5%;
+    margin-left: 5%;
+    border-radius: 100%;
+    border: 4px solid white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+}
+
+
+.profil-header{
+    margin-top: 5%;
+    text-align: center;
+    float: left;
+    width: 15%;
+    height: 500px;
+    background-color: #24231F;
+    left: 0;
+    border : 7px solid #AC2938;
+}
+
+
+
+.test {
+    background-image: linear-gradient(to bottom, Black 0%, #AC2938 100%);
+    margin-top: 7% ;
+    width: 70%;
+    margin-left: 23%;
+}
+
+.bouton {
+    /* This extra margin represent roughly the same space as the space between the labels and their text fields */
+    background-color: #AC2938;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 15px;
+    width: 120px;
+    height: 50px;
+    display: block;
+    margin-left: 20%;
+    float: left;
+    text-decoration: none;
+    text-align: center;
+
+
+}
+.bouton:hover{
+    opacity: 30%
+}
+
