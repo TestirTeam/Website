@@ -9,7 +9,7 @@
     <a href="#page-3" class="logo">
         <div class="igloo">
             <img src="../Images/Logo%20Testir.png" alt="" id="imgTestirHeaderLogo"/>
-            <img src="../Images/TesTirBlanc....png" alt="" id="imgTestirHeader"/>
+            <img src="../Images/TesTirBlanc.png" alt="" id="imgTestirHeader"/>
         </div>
     </a>
     <div class="header-right">

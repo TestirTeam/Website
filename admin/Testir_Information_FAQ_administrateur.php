@@ -14,13 +14,13 @@ modifierFaq();
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="Testir_Information_FAQ_administrateur.css">
+		<link rel="stylesheet" type="text/css" href="../MVC/index.php">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php") ; ?>
+			<?php include("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 			

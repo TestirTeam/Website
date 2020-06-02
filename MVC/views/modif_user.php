@@ -10,6 +10,9 @@
 
 <?php
 require('models/connexiondb.php');
+if(isset($_SESSION['id'])){
+    require('controllers/editionprofil.php');
+
 ?>
 
 
@@ -49,33 +52,33 @@ require('models/connexiondb.php');
                     <p>
 
                         <label for="pseudo">Votre pseudo</label>
-                        <input type="text" name="pseudo" id="pseudo"  value=<?php echo $_SESSION["pseudo"];?>> <br/>
+                        <input type="text" name="pseudomu" id="pseudo"  value=<?php echo $_SESSION["pseudo"];?>> <br/>
 
                         <label for="nom">Nom</label>
-                        <input type="text" name="nom" id="nom"  value=<?php echo $_SESSION["nom"];?>> <br/>
+                        <input type="text" name="nommu" id="nom"  value=<?php echo $_SESSION["nom"];?>> <br/>
 
                         <label for="prenom">Prénom</label>
-                        <input type="text" name="prenom" id="prenom"  value=<?php echo $_SESSION["prenom"];?>> <br/>
+                        <input type="text" name="prenommu" id="prenom"  value=<?php echo $_SESSION["prenom"];?>> <br/>
 
                         <label for="age">Age</label>
-                        <input type="text" name="age" id="age" value=<?php echo $_SESSION["age"];?>> <br/>
+                        <input type="text" name="agemu" id="age" value=<?php echo $_SESSION["age"];?>> <br/>
 
                         <label for="anniversaire">Date de naissance </label>
-                        <input type="date" id="daten" name="daten"
+                        <input type="date" id="daten" name="datenmu"
                                value=<?php echo $_SESSION["date"];?>> <br/>
 
                         <label for="pays">Pays </label>
-                        <select name="pays" id="pays">
+                        <select name="paysmu" id="pays">
                             <option value="">France</option>
                             <option value="Espagne">Espagne</option>
                             <option value="Angleterre">Angleterre</option>
                         </select> <br/>
 
                         <label for="adresse">Adresse</label>
-                        <input type="text" name="adrs" id="adrs"  value=<?php echo $_SESSION["adrs"];?>> <br/>
+                        <input type="text" name="adrsmu" id="adrs"  value=<?php echo $_SESSION["adrs"];?>> <br/>
 
                         <label for="sexe">Sexe</label>
-                        <select name="sexe" id="sexe">
+                        <select name="sexemu" id="sexe">
                             <option value="féminin">Femme</option>
                             <option value="masculin">Homme</option>
                         </select> <br/>
@@ -88,7 +91,7 @@ require('models/connexiondb.php');
                     <legend>Adresse e-mail</legend>
                     <p>
                         <label for="mail">e-mail</label>
-                        <input type="mail" id="mail" pattern=".+@globex.com" size="30" required value=<?php echo $_SESSION["mail"];?>> <br/>
+                        <input type="mail" name="mailmu" id="mail"  required value=<?php echo $_SESSION["mail"];?>> <br/>
                         <input type=submit class="modifier" name="modifier" value="modifier">
                     </p>
                 </fieldset>
@@ -98,3 +101,9 @@ require('models/connexiondb.php');
 </div>
 </body>
 </html>
+<?php
+}
+else {
+    header("Location: ");
+}
+?>

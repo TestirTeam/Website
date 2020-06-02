@@ -13,13 +13,13 @@ require("controleur\Testir_Information_fonction.php");
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="Testir_Information_MentionLegales_administrateur.css">
+		<link rel="stylesheet" type="text/css" href="../MVC/index.php">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php") ; ?>
+			<?php include("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 			
@@ -27,7 +27,7 @@ require("controleur\Testir_Information_fonction.php");
 
 					<div id="banniere">
 						<div class="rectangle_blanc"></div>
-						<h1> Mentions <br> légales </h1>
+						<h1> Conditions Générales <br> d'utilisation</h1>
 						<div class="rectangle_blanc"></div>
 					</div>
 
@@ -37,10 +37,10 @@ require("controleur\Testir_Information_fonction.php");
 						<div id="imageMoins"></div>
 					</button>
 
-					<form method="post" action="Testir_Information_MentionLegales_administrateur.php" id="ml">
-						<div id="nouvellesML">
-							<h3> Nouvelles mentions légales : </h3>
-							<textarea type="text" name="ML" id="formNouvellesML"><?php ml() ; ?></textarea>
+					<form method="post" action="Testir_Information_CGU_administrateur.php" id="cgu">
+						<div id="nouveauCGU">
+							<h3> Nouvelles CGU : </h3>
+							<textarea type="text" name="CGU" id="formNouveauCGU"><?php cgu() ; ?></textarea>
 						</div>
 
 						<div id="submit">
@@ -55,4 +55,4 @@ require("controleur\Testir_Information_fonction.php");
 	</body>
 </html>
 
-<?php modifierML(); ?>
+<?php modifierCGU(); ?>

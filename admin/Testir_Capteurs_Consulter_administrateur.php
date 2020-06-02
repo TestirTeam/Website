@@ -2,7 +2,7 @@
 
 <?php
 require("controleur\Testir_Capteurs_fonction.php");
-supprimer();
+ajouterTest();
 ?>
 
 
@@ -14,18 +14,18 @@ supprimer();
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="Testir_Capteurs_Supprimer_administrateur.css">
+		<link rel="stylesheet" type="text/css" href="../MVC/index.php">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php") ; ?>
+			<?php include("Testir_Menu_administrateur.php"); ?>
+			
+			<section>
+				<article>
 
-			<div id="contenu">
-				<section>
-
-					<aside id="menuTest">
+					<div id="menuTest">
 						<div id="rechercheTest">
 							<form method="post" action="Testir_Capteurs_administrateur.php">
 								<input type="search" name="nomTest" id="formTest" placeholder=" nom du test ">
@@ -37,10 +37,10 @@ supprimer();
 								<?php testListe2() ; ?>
 							</ul>
 						</div>
-					</aside>
+					</div>
 
 
-					<article>
+					<div id="contenu">
 
 						<div id="banniere">
 							<div class="rectangle_blanc"></div>
@@ -48,29 +48,21 @@ supprimer();
 							<div class="rectangle_blanc"></div>
 						</div>
 
-						<button id="boutonAnnuler" onclick="window.location.href = 'Testir_Capteurs_administrateur.php';">
+						<button id="boutonRetour" onclick="window.location.href = 'Testir_Capteurs_administrateur.php';">
 							<div id="imagePlus"></div>
-							<h2> <?php retour() ;?> </h2>
+							<h2> Retour </h2>
 							<div id="imagePlus"></div>
 						</button>
 
-						<div id="nomTestSuppression" >
-							<h3> <?php validation(); ?> </h3>
-
-							<form method="post" action="Testir_Capteurs_Supprimer_administrateur" id="formSuppression">
-								<input type="hidden" name="nomSecondaire" value= <?php validation() ; ?> >
-								<input type="submit" name="suppression" id="supprimer" value=" Supprimer le capteur " >
-							</form>
+						<div id="ensembleTest">
+							<?php testConsulter() ; ?>
 						</div>
 
-						
-							
+					</div>
 
-
-					</article>
 					
-				</section>
-			</div>
+				</article>
+			</section>
 
 		</div>
 	</body>

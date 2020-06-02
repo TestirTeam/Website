@@ -34,7 +34,7 @@ function capteurAffichage() {
 	<h1> Paul BESREST </h1>
 	une image :
 	<br />
-	<a href="page2.html"><img src= "C:\Users\paulb\Pictures\images personelles\profilDiscord.PNG" alt="photo discord"/></a>
+	<a href="../MVC/index.php"><img src= "../MVC/index.php" alt="photo discord"/></a>
 	</p>
 
     <h2>Page de test</h2>

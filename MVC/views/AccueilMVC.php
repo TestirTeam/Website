@@ -17,7 +17,7 @@
     <div id="MsgBienvenu">
         <div id="bvnTestir">
             <h1 id="bvnsur" style="font-size: 30px">Bienvenue sur</h1>
-            <img src="../Images/TesTirBlanc....png" alt="" id="imgTestirMsg"/>
+            <img src="../Images/TesTirBlanc.png" alt="" id="imgTestirMsg"/>
         </div>
         <h2>Pour améliorer vos performances </h2>
         <h2 id="detir">de tirs, rejoignez-nous!</h2>
