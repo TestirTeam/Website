@@ -1,4 +1,6 @@
-<?php $title = 'Son' ?>
+<?php $title = 'Son' ;
+require('models/modele_test_personnalite.php');
+require('models/connexiondb.php');?>
 
 
 <head>
@@ -26,7 +28,12 @@
             <div class="image">
                 <img class="image_fond" src="../Images/son.jpg" alt="">
             </div>
-            <a href="#" class="fomrulaire_button">Acceder au formulaire du test</a>
+            <a <?php $test=checkTest($db,$_SESSION['id']);
+            if(empty($test)){
+                echo 'href="formulaire-test"';
+            }else{
+                echo 'href="wait-test"';
+            }?> class="fomrulaire_button">Acceder au formulaire du test</a>
         </div>
     </div>
 

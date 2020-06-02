@@ -8,7 +8,7 @@ if(isset($_GET['url'])){
 }
 
 if($url==''){
-    require('views/AccueilMVC.php');
+    require('views/AccueilMVCV2.php');
 }elseif($url[0]=='connexion' AND empty($url[1]) AND empty($_SESSION['mail'])){
     require ('views/AccueilCOMVC.php');
 
@@ -63,10 +63,6 @@ if($url==''){
 
     require('views/formulaireAide.php');
 
-}elseif ($url[0]=='formulaire-test'AND empty($url[1])AND isset($_SESSION['mail'])){
-
-    require('views/formulaireTest.php');
-
 }elseif ($url[0]=='messagerie-envoi'AND empty($url[1])AND isset($_SESSION['mail'])){
 
     require('views/envoi.php');
@@ -86,6 +82,18 @@ if($url==''){
 }elseif ($url[0]=='administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
 
     require('views/Admin/Testir_Accueil_administrateur.php');
+
+}elseif ($url[0]=='formulaire-test'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/vue_test_personnalite.php');
+
+}elseif ($url[0]=='profilExam'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/profil_exam.php');
+
+}elseif ($url[0]=='wait-test'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/attente_formulaire.php');
 
 }else{
     require('views/404error.php');
