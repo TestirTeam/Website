@@ -14,15 +14,15 @@
         <img src="../Images/Logo%20Testir.png">
 
         <p class="footer-links">
-            <a href="#" class="link-1">Accueil</a>
+            <a href="index.php" class="link-1">Accueil</a>
 
-            <a href="#">Notre Start-up</a>
+            <a href="index.php#page-2">Notre Start-up</a>
 
-            <a href="#">Nos Services</a>
+            <a href="index.php#page-3">Nos Services</a>
 
-            <a href="#">Faq</a>
+            <a href="FAQ">Faq</a>
 
-            <a href="#">Contact</a>
+            <a href="mail">Contact</a>
         </p>
 
         <p class="footer-company-name">TESTIR © 2020</p>
@@ -51,7 +51,7 @@
 
         <p class="footer-company-about">
             <span>La compagnie TESTIR</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            Notre objectif est de faire en sorte que les détenteurs d’arme à feu aient une parfaite maîtrise de leurs armes, réduisant ainsi au maximum le risque d’accident.
         </p>
 
         <div class="footer-icons">
