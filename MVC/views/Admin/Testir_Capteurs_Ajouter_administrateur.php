@@ -14,13 +14,13 @@ ajouterTest();
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="Testir_Capteurs_Ajouter_administrateur.css">
+		<link rel="stylesheet" type="text/css" href="../../index.php">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php") ; ?>
+			<?php include("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 			
@@ -56,7 +56,7 @@ ajouterTest();
 							<div id="imageMoins"></div>
 						</button>
 
-						<form method="post" action="Testir_Capteurs_Ajouter_administrateur.php"  id="nouveauTest">
+						<form method="post" action="Testir_Capteurs_Ajouter_administrateur.php" id="nouveauTest">
 							<div id="nouveauTestNom">
 								<?php  verificationNom() ; ?>
 								<h3> Nom : </h3>

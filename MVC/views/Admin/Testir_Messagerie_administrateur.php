@@ -12,7 +12,7 @@ require("controleur\Testir_Messagerie_fonction.php");
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="Testir_Messagerie_administrateur.css">
+		<link rel="stylesheet" type="text/css" href="../../index.php">
 
 		<script>
 
@@ -63,7 +63,7 @@ require("controleur\Testir_Messagerie_fonction.php");
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php") ; ?>
+			<?php include("Testir_Menu_administrateur.php"); ?>
 			
 			<section>
 

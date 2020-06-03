@@ -1,6 +1,6 @@
 <?php
 require ("models/connexiondb.php");
-require ("header.php");
+require("header.php");
 
 if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     require("models/boiteReception.php");
@@ -29,14 +29,14 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 <div class="boitemsg">
     <div class="boxenvoi">
         <img src="../Images/message/gmail.png" class="boxmail">
-        <a href="messagerie-envoi" class="a-envoi"> <p class="p-envoi">Boite d'envoi</p></a>
+        <a href="../index.php" class="a-envoi"> <p class="p-envoi">Boite d'envoi</p></a>
     </div>
     <br />
 
     <?php while($m=$msg->fetch()){
     $pexp= showPseudoDesti($db,$m['id_destinataire'])
     ?>
-        <form id="my_form" method="POST" action="lectureMsg">
+        <form id="my_form" method="POST" action="../index.php">
             <?php if($m['lu']==1){ ?>
             <span style="color: gray">
             <?php }?>
@@ -65,5 +65,5 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
 </body>
 <?php }
-require ("footer.php");
+require("footer.php");
 ?>

@@ -14,13 +14,13 @@ supprimer();
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="Testir_Capteurs_Supprimer_administrateur.css">
+		<link rel="stylesheet" type="text/css" href="../../index.php">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php") ; ?>
+			<?php include("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 				<section>
@@ -57,7 +57,7 @@ supprimer();
 						<div id="nomTestSuppression" >
 							<h3> <?php validation(); ?> </h3>
 
-							<form method="post" action="Testir_Capteurs_Supprimer_administrateur" id="formSuppression">
+							<form method="post" action="../../index.php" id="formSuppression">
 								<input type="hidden" name="nomSecondaire" value= <?php validation() ; ?> >
 								<input type="submit" name="suppression" id="supprimer" value=" Supprimer le capteur " >
 							</form>

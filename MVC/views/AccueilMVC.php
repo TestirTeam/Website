@@ -1,5 +1,5 @@
 
-<?php require('header.php')?>
+<?php require('header.php') ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

@@ -23,13 +23,13 @@ if (!isset($_POST['nomUtilisateur'])) {
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="Testir_Utilisateurs_administrateur.css">
+		<link rel="stylesheet" type="text/css" href="../../index.php">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php") ; ?>
+			<?php include("Testir_Menu_administrateur.php"); ?>
 			
 			<section>
 

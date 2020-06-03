@@ -38,6 +38,7 @@ if(isset($_POST['formInscr']))/* detection si le bouton est pressé*/
             <div id="dateage">
                 <h3>Age  :</h3>
                 <input type="text" id="age" name="age">
+                </br>
                 <h3>Date de Naissance : </h3>
                 <input type="date" id="daten" name="daten">
             </div>
@@ -79,7 +80,7 @@ if(isset($_POST['formInscr']))/* detection si le bouton est pressé*/
 
     <div id="inscr"></div>
 
-    <?php require("header.php")?>
+    <?php require("header.php") ?>
 
 </scroll-page>
 

@@ -11,7 +11,7 @@
 
 <body>
 
-<?php require("header.php")?>
+<?php require("header.php") ?>
 
 <div class="profil-header">
     <div class="profil-img">
@@ -27,9 +27,9 @@
 <div class="corps">
     <div class="rectangle1"> </div>
     <div class="demande">
-        <h1>Envoyez-nous une demande</h1>
+        <h1>F.A.Q</h1>
         <p class="prems"> Quel que soit votre problème, nous sommes là pour vous aider ! </p>
-        <p class="prems"> Posez-nous une question ! </p>
+        <p class="prems"> </p>
         <p class="details">Détails</p>
         <div class="rectangle2"> </div>
 

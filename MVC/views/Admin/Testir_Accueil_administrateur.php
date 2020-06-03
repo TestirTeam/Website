@@ -19,7 +19,7 @@ require ("models/connexiondb.php");
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php") ; ?>
+			<?php include("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 

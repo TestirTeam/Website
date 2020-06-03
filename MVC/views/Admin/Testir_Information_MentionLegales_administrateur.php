@@ -13,13 +13,13 @@ require("controleur\Testir_Information_fonction.php");
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="Testir_Information_MentionLegales_administrateur.css">
+		<link rel="stylesheet" type="text/css" href="../../index.php">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php") ; ?>
+			<?php include("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 			
