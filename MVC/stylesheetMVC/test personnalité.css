@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+
 body
 {
     background: url("../../Images/fond_testir.png") repeat-y rgba(112, 112, 112, 0.8);
@@ -6,13 +9,6 @@ body
 
 @font-face {font-family: "Apple SD Gothic Neo"; src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot"); src: url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.woff") format("woff"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/67680f2eb947c5cbd58b40961b4a61e9.svg#Apple SD Gothic Neo") format("svg"); }
 @font-face {font-family: "Agency FB"; src: url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.eot"); src: url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.woff") format("woff"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f9b9a4fce362a3a9111c138859ccb422.svg#Agency FB") format("svg"); }
-
-
-
-
-
-
-
 
 
 /*
@@ -25,7 +21,6 @@ STYLE FORMULAIRE
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .form {
@@ -120,70 +115,160 @@ STYLE SUBMIT
 .
 .
 */
+.boutons {
+    display: -webkit-box;
+    display: flex;
+    height: 54px;
+    width: 99%;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column;
+    margin-bottom: 50px;
+}
+input[type="submit"]
+{
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+}
+.boutons a {
 
-
-.submit {
-    position: relative;
-    margin-left: 27%;
-    margin-right: auto;
+    width: 100%;
+    max-width: 240px;
+    height: 54px;
+    padding: 8px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    background: hsl(0, 0%, 10%);
     text-align: center;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: white;
-    text-decoration: none;
-    font-size: 2em;
-    display: inline-block;
-    font-family: Montserrat, serif;
     text-transform: uppercase;
-    padding: 0.5em 2em;
-    border:1px solid white;
-    -webkit-transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
-    transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    text-decoration: none;
+    box-shadow: 0 0 0 1px inset rgba(236, 232, 225, 0.3);
+    position: relative;
+    margin: 10px 0;
 }
-.submit::before {
-    margin-left: auto;
-    margin-right: auto;
+.boutons a.white:hover > p {
+    color: #ece8e1;
+}
+.boutons a.white > p {
+    background: #ece8e1;
+    color: #0f1923;
+}
+.boutons a.white > p span.base {
+    border: 1px solid transparent;
+}
+.boutons a.transparent:hover > p {
+    color: #ece8e1;
+}
+.boutons a.transparent:hover > p .texte {
+    box-shadow: 0 0 0 1px #ece8e1;
+}
+.boutons a.transparent > p {
+    background: #0f1923;
+    color: #ece8e1;
+}
+.boutons a.transparent > p span.base {
+    border: 1px solid #ece8e1;
+}
+.boutons a:after, div a:before {
     content: "";
-    display: inline-block;
+    width: 1px;
     position: absolute;
-    top: 0;
+    height: 8px;
+    background: #0f1923;
     left: 0;
-    right: 100%;
-    bottom: 0;
-    background: white;
-    -webkit-transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
-    transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
-    z-index: -1;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
-.submit::after {
-    content: "";
-    display: inline-block;
-    background-image: url("https://image.flaticon.com/icons/png/128/109/109617.png");
+.boutons a:before {
+    right: 0;
+    left: initial;
+}
+.boutons a p {
+    margin: 0;
+    height: 54px;
+    line-height: 54px;
+    box-sizing: border-box;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.boutons a p span.base {
+    box-sizing: border-box;
     position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    border: 1px solid white;
+}
+.boutons a p span.base:before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    left: -1px;
+    top: -1px;
+    background: #0f1923;
+    position: absolute;
+    -webkit-transition: 0.3s ease-out all;
+    transition: 0.3s ease-out all;
+}
+.boutons a p span.bg {
+    left: -5%;
+    position: absolute;
+    background: #ff4655;
+    width: 0;
+    height: 100%;
+    z-index: 3;
+    -webkit-transition: 0.3s ease-out all;
+    transition: 0.3s ease-out all;
+    -webkit-transform: skewX(-10deg);
+    transform: skewX(-10deg);
+}
+.boutons a p .texte {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
     top: 0;
-    left: calc(100% - 3em);
-    right: 3em;
+}
+.boutons a p .texte:after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    right: 0;
     bottom: 0;
-    background-size: 1.5em;
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
-    transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    background: #0f1923;
+    position: absolute;
+    -webkit-transition: 0.3s ease-out all;
+    transition: 0.3s ease-out all;
+    z-index: 5;
 }
-.submit:hover {
-    padding: 0.5em 3.5em 0.5em 0.5em;
+.boutons a:hover {
+    color: #ece8e1;
 }
-.submit:hover::before {
-    left: calc(100% - 3em);
-    right: 0;
-    -webkit-transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
-    transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+.boutons a:hover span.bg {
+    width: 110%;
 }
-.submit:hover::after {
-    right: 0;
-    -webkit-transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
-    transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+.boutons a:hover .texte:after {
+    background: #ece8e1;
 }
+/*
+.
+.
+.
+FIN STYLE SUBMIT
+*/
+
 .information_validation {
     background: hsl(0, 0%, 10%);
     color: white;
@@ -195,14 +280,6 @@ STYLE SUBMIT
     border-radius: 5px;
     margin-top: 180px;
 }
-/*
-.
-.
-.
-FIN STYLE SUBMIT
-*/
-
-
 
 
 

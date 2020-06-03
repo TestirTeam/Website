@@ -337,19 +337,19 @@ require('controllers/controlleur_test_personnalite.php');
             </fieldset><br /><br />
 
 
-            <div>
-
-
-                <input class="submit" type="submit" value="Soumettre" name="envoi">
-
+            <div class="boutons"><a href="#">
+                    <p>
+                        <span class="bg"></span>
+                        <span class="base"></span>
+                        <input class="submit" type="submit" value="Soumettre" name="envoi">
+                    </p>
+                </a>
             </div>
 
         </form>
 
 
     </div>
-
-</div>
 
 
 </body>
