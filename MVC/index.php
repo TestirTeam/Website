@@ -59,9 +59,9 @@ if($url==''){
 
     require('views/test_vue.php');
 
-}elseif ($url[0]=='formulaire-aide'AND empty($url[1])AND isset($_SESSION['mail'])){
+}elseif ($url[0]=='FAQ'AND empty($url[1])AND isset($_SESSION['mail'])){
 
-    require('views/formulaireAide.php');
+    require('views/faq.php');
 
 }elseif ($url[0]=='messagerie-envoi'AND empty($url[1])AND isset($_SESSION['mail'])){
 
@@ -94,6 +94,10 @@ if($url==''){
 }elseif ($url[0]=='wait-test'AND empty($url[1])AND isset($_SESSION['mail'])) {
 
     require('views/attente_formulaire.php');
+
+}elseif ($url[0]=='mail'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/mail.php');
 
 }else{
     require('views/404error.php');

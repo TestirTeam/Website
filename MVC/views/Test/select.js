@@ -3,7 +3,7 @@ const dropdown = document.querySelector('.value-list');
 const dropdownArray = [... document.querySelectorAll('li')];
 console.log(typeof dropdownArray)
 dropdown.classList.add('open');
-inputField.focus(); // Demo purposes only
+inputField.focus();
 let valueArray = [];
 dropdownArray.forEach(item => {
     valueArray.push(item.textContent);

@@ -54,7 +54,7 @@ function scoretotal($scoreSon, $scoreTemp, $scoreBatt, $scoreVue, $scorePers){
             <a href="choix-test" class="bouton2">Test</a>
         </div>
         <div class="Boutton">
-            <a href="formulaire-aide" class="bouton3">Aide</a>
+            <a href="FAQ" class="bouton3">Aide</a>
         </div>
     </section>
 </div>

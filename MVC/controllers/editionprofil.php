@@ -1,5 +1,5 @@
 <?php
-require("models/modifUser.php");
+
 
 $requser = $db->prepare("SELECT * FROM client WHERE id_client = ?");
 $requser->execute(array($_SESSION['id']));
