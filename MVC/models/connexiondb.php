@@ -31,6 +31,7 @@ echo $dbpassword . " - passwd<br>";
 */
 $dbanfang = 'mysql:host=' . $dbhost . ';dbname=' . $dbname;
 $db = new PDO($dbanfang, $dbuser, $dbpassword);
+$db->exec('SET NAMES utf8');
 //You can only use this with the standard port!
 
 ?>

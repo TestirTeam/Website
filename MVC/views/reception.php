@@ -34,7 +34,7 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     <br />
 
     <?php while($m=$msg->fetch()){
-    $pexp= showPseudoDesti($db,$m['id_destinataire'])
+    $pexp= showPseudoDesti($db,$m['id_expediteur'])
     ?>
         <form id="my_form" method="POST" action="lectureMsg">
             <?php if($m['lu']==1){ ?>

@@ -11,7 +11,7 @@ $question5=getFaqInfo($db,5);
 <html lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>HTML CSS FAQ Design | Webdevtrick.com</title>
+    <title>FAQ Testir</title>
     <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
     <link rel="stylesheet" href="stylesheetMVC/faq.css">
 </head>

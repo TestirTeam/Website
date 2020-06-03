@@ -2,6 +2,6 @@
 session_start();
 $_SESSION=array();
 session_destroy();
-header('Location: http://localhost/WebsiteTestir/Website/MVC/');
+header('Location: https://testir-website.herokuapp.com/MVC/index.php');
 
 ?>
