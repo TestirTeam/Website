@@ -79,10 +79,6 @@ if($url==''){
 
     require('controllers/supprimerMsg.php');
 
-}elseif ($url[0]=='administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
-
-    require('views/Admin/Testir_Accueil_administrateur.php');
-
 }elseif ($url[0]=='formulaire-test'AND empty($url[1])AND isset($_SESSION['mail'])) {
 
     require('views/vue_test_personnalite.php');
@@ -102,6 +98,62 @@ if($url==''){
 }elseif ($url[0]=='mention'AND empty($url[1])AND isset($_SESSION['mail'])) {
 
     require('views/mentions.php');
+
+}elseif ($url[0]=='Testir_Accueil_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Accueil_administrateur.php');
+
+}elseif ($url[0]=='Testir_Accueil_Annonce_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Accueil_Annonce_administrateur.php');
+
+}elseif ($url[0]=='Testir_Capteurs_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Capteurs_administrateur.php');
+
+}elseif ($url[0]=='Testir_Capteurs_Ajouter_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Capteurs_Ajouter_administrateur.php');
+
+}elseif ($url[0]=='Testir_Capteurs_Consulter_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Capteurs_Consulter_administrateur.php');
+
+}elseif ($url[0]=='Testir_Capteurs_Modifier_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Capteurs_Modifier_administrateur.php');
+
+}elseif ($url[0]=='Testir_Capteurs_Supprimer_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Capteurs_Supprimer_administrateur.php');
+
+}elseif ($url[0]=='Testir_Information_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Information_administrateur.php');
+
+}elseif ($url[0]=='Testir_Information_CGU_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Information_CGU_administrateur.php');
+
+}elseif ($url[0]=='Testir_Information_FAQ_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Information_FAQ_administrateur.php');
+
+}elseif ($url[0]=='Testir_Information_MentionLegales_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Information_MentionLegales_administrateur.php');
+
+}elseif ($url[0]=='Testir_Messagerie_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Messagerie_administrateur.php');
+
+}elseif ($url[0]=='Testir_Messagerie_Nouveau_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Messagerie_Nouveau_administrateur.php');
+
+}elseif ($url[0]=='Testir_Utilisateurs_administrateur'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/Testir_Utilisateurs_administrateur.php');
 
 }else{
     require('views/404error.php');

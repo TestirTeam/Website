@@ -4,19 +4,18 @@
 
 //menu
 
-function utilisateurListe() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
+function utilisateurListe($db) {
 	if (isset($_POST['nomUtilisateurListe'])) {
-		$requeteNomUtilisateur = $bdd->prepare('SELECT * FROM client WHERE nom LIKE ? ORDER BY nom');
-		$requeteNomUtilisateur->execute(array("%" . htmlspecialchars($_POST['nomUtilisateurListe']) . "%"));
+		$requeteNomUtilisateur = $db->prepare('SELECT * FROM client_paul WHERE nom LIKE ? OR prenom LIKE ? ORDER BY nom');
+		$requeteNomUtilisateur->execute(array("%" . htmlspecialchars($_POST['nomUtilisateurListe']) . "%","%" . htmlspecialchars($_POST['nomUtilisateurListe']) . "%"));
 	}
 	else{
-		$requeteNomUtilisateur = $bdd->query('SELECT * FROM client ORDER BY nom');
+		$requeteNomUtilisateur = $db->query('SELECT * FROM client_paul ORDER BY nom');
 	}
 	while ($nomUtilisateur = $requeteNomUtilisateur->fetch()) {
 		echo '
 		<li>
-			<form method="post" action="Testir_Utilisateurs_administrateur.php" >
+			<form method="post" action="Testir_Utilisateurs_administrateur" >
 				<input type="submit" class="submit" value="' . $nomUtilisateur['nom'] .' '. $nomUtilisateur['prenom']. '" >
 				<input type="hidden" name="nomUtilisateur" value="' . $nomUtilisateur['nom'] . '">
 				<input type="hidden" name="prenomUtilisateur" value="' . $nomUtilisateur['prenom'] . '">
@@ -30,64 +29,68 @@ function utilisateurListe() {
 
 //affichage informations utilisateurs
 
-function imageAfficher(){
-	if (isset($_POST['nomUtilisateur'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteClient = $bdd->prepare('SELECT * FROM client where nom = ? AND prenom = ?');
+function imageAfficher($db){
+	if ($_POST['nomUtilisateur']!="none") {
+		$requeteClient = $db->prepare('SELECT * FROM client_paul where nom = ? AND prenom = ?');
 		$requeteClient->execute(array($_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
 		$client = $requeteClient->fetch();
-		echo $client['image'];
-	}
+		return $client['image'];
+	}else{
+        return "none";
+    }
 }
 
-function nomAfficher(){
-	if (isset($_POST['nomUtilisateur'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteClient = $bdd->prepare('SELECT * FROM client where nom = ? AND prenom = ?');
+function nomAfficher($db){
+	if ($_POST['nomUtilisateur']!="none") {
+		$requeteClient = $db->prepare('SELECT * FROM client_paul where nom = ? AND prenom = ?');
 		$requeteClient->execute(array($_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
 		$client = $requeteClient->fetch();
-		echo $client['nom'];
-	}
+		return $client['nom'];
+	}else{
+        return "none";
+    }
 }
 
-function prenomAfficher(){
-	if (isset($_POST['nomUtilisateur'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteClient = $bdd->prepare('SELECT * FROM client where nom = ? AND prenom = ?');
+function prenomAfficher($db){
+	if ($_POST['nomUtilisateur']!="none") {
+		$requeteClient = $db->prepare('SELECT * FROM client_paul where nom = ? AND prenom = ?');
 		$requeteClient->execute(array($_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
 		$client = $requeteClient->fetch();
-		echo $client['prenom'];
-	}
+		return $_POST['nomUtilisateur'];
+	}else{
+	    echo "none";
+    }
 }
 
-function emailAfficher(){
-	if (isset($_POST['nomUtilisateur'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteClient = $bdd->prepare('SELECT * FROM client where nom = ? AND prenom = ?');
+function emailAfficher($db){
+	if ($_POST['nomUtilisateur']!="none") {
+		$requeteClient = $db->prepare('SELECT * FROM client_paul where nom = ? AND prenom = ?');
 		$requeteClient->execute(array($_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
 		$client = $requeteClient->fetch();
-		echo $client['email'];
-	}
+		return $client['email'];
+	}else{
+        return "none";
+    }
 }
 
-function typeAfficher(){
-	if (isset($_POST['nomUtilisateur'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteClient = $bdd->prepare('SELECT * FROM client where nom = ? AND prenom = ?');
+function typeAfficher($db){
+	if ($_POST['nomUtilisateur']!="none") {
+		$requeteClient = $db->prepare('SELECT * FROM client_paul where nom = ? AND prenom = ?');
 		$requeteClient->execute(array($_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
 		$client = $requeteClient->fetch();
-		echo $client['type'];
-	}
+		return $client['type'];
+	}else{
+        return "none";
+    }
 }
 
 //messages
 
-function messageAfficher(){
+function messageAfficher($db){
 	if (isset($_POST['emailUtilisateur'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteMessagerie = $bdd->prepare('SELECT * FROM messagerie where emailAuteur = ?');
+		$requeteMessagerie = $db->prepare('SELECT * FROM messagerie where emailAuteur = ?');
 		$requeteMessagerie->execute(array($_POST['emailUtilisateur']));
-		$requeteNombreMessagerie = $bdd->prepare('SELECT COUNT(*) FROM messagerie where emailAuteur = ?');
+		$requeteNombreMessagerie = $db->prepare('SELECT COUNT(*) FROM messagerie where emailAuteur = ?');
 		$requeteNombreMessagerie->execute(array($_POST['emailUtilisateur']));
 		$messagerieNombre = $requeteNombreMessagerie->fetch();
 		if ($messagerieNombre[0] == 0) {
@@ -129,48 +132,45 @@ function valider(){
 function bloquer(){
 }
 
-function supprimer(){
+function supprimer($db){
 	if (isset($_POST['supprimer'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteClient = $bdd->prepare('DELETE FROM client where nom = ? AND prenom = ?');
+		$requeteClient = $db->prepare('DELETE FROM client_paul where nom = ? AND prenom = ?');
 		$requeteClient->execute(array($_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
-	}
+	}else{
+        echo "none";
+    }
 }
 
 
 
-function nombrePouceBleu(){
+function nombrePouceBleu($db){
 	if (isset($_POST['nomUtilisateur'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteClient = $bdd->prepare('SELECT * FROM client where nom = ? AND prenom = ?');
+		$requeteClient = $db->prepare('SELECT * FROM client_paul where nom = ? AND prenom = ?');
 		$requeteClient->execute(array($_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
 		$client = $requeteClient->fetch();
 		echo $client['nombrePouceBleu'];
 	}
 }
 
-function nombrePouceRouge(){
+function nombrePouceRouge($db){
 	if (isset($_POST['nomUtilisateur'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteClient = $bdd->prepare('SELECT * FROM client where nom = ? AND prenom = ?');
+		$requeteClient = $db->prepare('SELECT * FROM client_paul where nom = ? AND prenom = ?');
 		$requeteClient->execute(array($_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
 		$client = $requeteClient->fetch();
 		echo $client['nombrePouceRouge'];
 	}
 }
 
-function commentaireAfficher(){
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteClient = $bdd->prepare('SELECT * FROM client where nom = ? AND prenom = ?');
+function commentaireAfficher($db){
+	$requeteClient = $db->prepare('SELECT * FROM client_paul where nom = ? AND prenom = ?');
 	$requeteClient->execute(array($_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
 	$client = $requeteClient->fetch();
 	echo $client['commentaire'];
 }
 
-function commentaireModifier(){
+function commentaireModifier($db){
 	if (isset($_POST['commentaire'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteClient = $bdd->prepare('UPDATE client SET commentaire = ? where nom = ? AND prenom = ?');
+		$requeteClient = $db->prepare('UPDATE client_paul SET commentaire = ? where nom = ? AND prenom = ?');
 		$requeteClient->execute(array(htmlspecialchars($_POST['commentaire']),$_POST['nomUtilisateur'],$_POST['prenomUtilisateur']));
 	}
 }

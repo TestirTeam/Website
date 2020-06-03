@@ -1,16 +1,18 @@
 
 
 <?php
-require("controleur\Testir_Utilisateurs_fonction.php");
+require("controllers/Testir_Utilisateurs_fonction.php");
+require ("models/connexiondb.php");
 
-commentaireModifier();
-supprimer();
+commentaireModifier($db);
+supprimer($db);
 
 // dans le cas d'aucun utilisateur sélectionné
 if (!isset($_POST['nomUtilisateur'])) {
 	$_POST['nomUtilisateur'] = "none";
 	$_POST['prenomUtilisateur'] = "none";
 	$_POST['emailUtilisateur'] = "none";
+
 }
 ?>
 
@@ -23,26 +25,26 @@ if (!isset($_POST['nomUtilisateur'])) {
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="../../index.php">
+		<link rel="stylesheet" type="text/css" href="stylesheetMVC/Admin/Testir_Utilisateurs_administrateur.css">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php"); ?>
+            <?php require("Testir_Menu_administrateur.php"); ?>
 			
 			<section>
 
 				<aside id="menuUtilisateur">
 					<div id="rectangle_rouge">
-						<form method="post" action="Testir_Utilisateurs_administrateur.php">
+						<form method="post" action="Testir_Utilisateurs_administrateur">
 							<input type="search" name="nomUtilisateurListe" id="rechercheUtilisateur" placeholder=" nom utilisateur ">
 						</form>
 					</div>
 					<div id="listeUtilisateur">
 						<h2> liste des utilisateurs : </h2>
 						<ul>
-							<?php utilisateurListe() ; ?>
+							<?php utilisateurListe($db) ; ?>
 						</ul>
 					</div>	
 				</aside>
@@ -58,17 +60,22 @@ if (!isset($_POST['nomUtilisateur'])) {
 
 					<div id="renseignement_utilisateur">
 						<div id="photo">
-							<img src="<?php imageAfficher() ; ?>" >
+							<img src="<?php $image=imageAfficher($db);
+                            echo $image;?>" >
 						</div>
 						<div id="information_personelle">
 							<h2> Nom </h2>
-							<div> <?php nomAfficher() ; ?> </div>
+							<div> <?php $nom=nomAfficher($db);
+                                echo $nom;?> </div>
 							<h2> Prénom </h2>
-							<div> <?php prenomAfficher() ; ?> </div>
+							<div> <?php  $prenom=prenomAfficher($db);
+                                echo $prenom;?> </div>
 							<h2> Email </h2>
-							<div> <?php emailAfficher() ; ?> </div>
+							<div> <?php $email=emailAfficher($db);
+                                echo $email; ?> </div>
 							<h2> Type </h2>
-							<div> <?php typeAfficher() ; ?> </div>
+							<div> <?php $type=typeAfficher($db);
+                                echo $type; ?> </div>
 						</div>
 					</div>
 
@@ -80,7 +87,7 @@ if (!isset($_POST['nomUtilisateur'])) {
 								<td class="type"> Type </td>
 								<td class="objet"> Objet </td>
 							</tr>
-							<?php messageAfficher() ; ?>
+							<?php messageAfficher($db) ; ?>
 						</table>
 					</div>
 				</article>
@@ -90,7 +97,7 @@ if (!isset($_POST['nomUtilisateur'])) {
 
 					<div id="gestion_utilisateur">
 
-						<form method="post" action="Testir_Utilisateurs_administrateur.php" class="optionUtilisateur">
+						<form method="post" action="Testir_Utilisateurs_administrateur" class="optionUtilisateur">
 							<input type="submit" class="bouton" value="Valider" >
 							<input type="hidden" name="nomUtilisateur" value=<?php echo $_POST['nomUtilisateur'] ?> >
 							<input type="hidden" name="prenomUtilisateur" value= <?php echo $_POST['prenomUtilisateur'] ?> >
@@ -98,7 +105,7 @@ if (!isset($_POST['nomUtilisateur'])) {
 							<input type="hidden" name="valider" value="1">
 						</form>
 
-						<form method="post" action="Testir_Utilisateurs_administrateur.php" class="optionUtilisateur">
+						<form method="post" action="Testir_Utilisateurs_administrateur" class="optionUtilisateur">
 							<input type="submit" class="bouton" value="Bloquer" >
 							<input type="hidden" name="nomUtilisateur" value=<?php echo $_POST['nomUtilisateur'] ?> >
 							<input type="hidden" name="prenomUtilisateur" value= <?php echo $_POST['prenomUtilisateur'] ?> >
@@ -106,7 +113,7 @@ if (!isset($_POST['nomUtilisateur'])) {
 							<input type="hidden" name="bloquer" value="1">
 						</form>
 
-						<form method="post" action="Testir_Utilisateurs_administrateur.php" class="optionUtilisateur">
+						<form method="post" action="Testir_Utilisateurs_administrateur" class="optionUtilisateur">
 							<input type="submit" class="bouton" value="Supprimer" >
 							<input type="hidden" name="nomUtilisateur" value=<?php echo $_POST['nomUtilisateur'] ?> >
 							<input type="hidden" name="prenomUtilisateur" value= <?php echo $_POST['prenomUtilisateur'] ?> >
@@ -118,23 +125,14 @@ if (!isset($_POST['nomUtilisateur'])) {
 
 					<div id="informations_forum">
 
-						<h2> Réactions Forums </h2>
-
-						<div id="pouces">
-							<div id="pouce_bleu">
-								<img src="C:/Users/paulb/Pictures/Image_Testir/pouce_bleu.jpg" alt="pouce bleu">
-							</div>
-							<h3> <?php nombrePouceBleu(); ?> </h3>
-							<div id="pouce_rouge">
-								<img src="C:/Users/paulb/Pictures/Image_Testir/pouceRouge.jpg" alt="pouce rouge">
-							</div>
-							<h3> <?php nombrePouceRouge(); ?> </h3>
-						</div>
+                        <h2> Commentaires </h2>
 
 						<div id="commentaires">
-							<h3> Commentaires </h3>
-							<form method="post" action="Testir_Utilisateurs_administrateur.php">
-								<textarea id="zoneCommentaire" name="commentaire" value="1"><?php commentaireAfficher(); ?></textarea>
+
+							<h3> spécifique à l'utilisateur </h3>
+
+							<form method="post" action="Testir_Utilisateurs_administrateur">
+								<textarea id="zoneCommentaire" name="commentaire" value="1"><?php commentaireAfficher($db); ?></textarea>
 								<input type="submit" name="commentaireSubmit" value="enregistrer">
 								<input type="hidden" name="nomUtilisateur" value=<?php echo $_POST['nomUtilisateur'] ?> >
 								<input type="hidden" name="prenomUtilisateur" value= <?php echo $_POST['prenomUtilisateur'] ?> >

@@ -1,7 +1,8 @@
 
 
 <?php
-require("controleur\Testir_Capteurs_fonction.php");
+require("controllers/Testir_Capteurs_fonction.php");
+require ("models/connexiondb.php");
 
 if (!isset($_POST['ModificationNom'])) {
 	$_POST['ModificationNom'] = $_POST['nomCapteur'];
@@ -24,10 +25,10 @@ if (!isset($_POST['nomSecondaire'])) {
 }
 
 
-modifierNom();
-modifierImage();
-modifierFonctionnalite();
-modifierProgramme();
+modifierNom($db);
+modifierImage($db);
+modifierFonctionnalite($db);
+modifierProgramme($db);
 ?>
 
 
@@ -39,13 +40,13 @@ modifierProgramme();
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="../../index.php">
+		<link rel="stylesheet" type="text/css" href="stylesheetMVC/Admin/Testir_Capteurs_Modifier_administrateur.css">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php"); ?>
+            <?php require("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 			
@@ -53,14 +54,14 @@ modifierProgramme();
 					<aside id="menuTest">
 
 						<div id="rechercheTest">
-							<form method="post" action="Testir_Capteurs_administrateur.php">
+							<form method="post" action="Testir_Capteurs_administrateur">
 								<input type="search" name="nomTest" id="formTest" placeholder=" nom du test ">
 							</form>
 						</div>
 						<div id="listeTest">
 							<h2> Liste des tests : </h2>
 							<ul>
-								<?php testListe2() ; ?>
+								<?php testListe2($db) ; ?>
 							</ul>
 						</div>
 
@@ -75,32 +76,32 @@ modifierProgramme();
 							<div class="rectangle_blanc"></div>
 						</div>
 
-						<button id="boutonAnnuler" onclick="window.location.href = 'Testir_Capteurs_administrateur.php';">
+						<button id="boutonAnnuler" onclick="window.location.href = 'Testir_Capteurs_administrateur';">
 							<div id="imageMoins"></div>
 							<h2> Retour </h2>
 							<div id="imageMoins"></div>
 						</button>
 
-						<form method="post" action="Testir_Capteurs_Modifier_administrateur.php" id="nouveauTest">
+						<form method="post" action="Testir_Capteurs_Modifier_administrateur"  id="nouveauTest">
 							<div id="nouveauTestNom">
 								<?php verificationNom2() ; ?>
 								<h3> Nom : </h3>
-								<input type="text" name="ModificationNom" id="formNomNouveauTest" value="<?php afficherNom() ; ?>">
+								<input type="text" name="ModificationNom" id="formNomNouveauTest" value="<?php afficherNom($db) ; ?>">
 							</div>
 
 							<div id="nouveauTestImage">
 								<h3> Lien de l'image : </h3>
-								<input type="text" name="ModificationImage" id="formImageNouveauTest" value="<?php afficherImage() ; ?>">
+								<input type="text" name="ModificationImage" id="formImageNouveauTest" value="<?php afficherImage($db) ; ?>">
 							</div>
 
 							<div id="nouveauTestFonctionnalite">
 								<h3> Fonctionnalité : </h3>
-								<textarea name="ModificationFonctionnalite" id="formFonctionnaliteNouveauTest"><?php afficherFonctionnalite() ; ?></textarea>
+								<textarea name="ModificationFonctionnalite" id="formFonctionnaliteNouveauTest"><?php afficherFonctionnalite($db) ; ?></textarea>
 							</div>
 
 							<div id="nouveauTestProgramme">
 								<h3> Programme : </h3>
-								<textarea name="ModificationProgramme" id="formProgrammeNouveauTest" ><?php afficherProgramme() ; ?></textarea>
+								<textarea name="ModificationProgramme" id="formProgrammeNouveauTest" ><?php afficherProgramme($db) ; ?></textarea>
 							</div>
 
 							<div>

@@ -5,9 +5,8 @@
 
 //Accueil
 
-function faqAfficher(){
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteFAQ = $bdd->query('SELECT * FROM faq');
+function faqAfficher($db){
+	$requeteFAQ = $db->query('SELECT * FROM faq');
 	while ($FAQ = $requeteFAQ->fetch()) {
 		echo '
 			<tr class="nouvelleLigne">
@@ -20,9 +19,8 @@ function faqAfficher(){
 }
 
 
-function forumAfficher(){
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteForum = $bdd->query('SELECT * FROM forum');
+function forumAfficher($db){
+	$requeteForum = $db->query('SELECT * FROM forum');
 	while ($Forum = $requeteForum->fetch()) {
 		echo '
 			<tr class="nouvelleLigne">
@@ -36,9 +34,8 @@ function forumAfficher(){
 
 //CGU
 
-function cgu() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteCGU = $bdd->query('SELECT contenu FROM cgu');
+function cgu($db) {
+	$requeteCGU = $db->query('SELECT contenu FROM cgu');
 	$CGU = $requeteCGU->fetch();
 	if (!empty($_POST['CGU'])){
 		echo $_POST['CGU'] ;
@@ -48,22 +45,20 @@ function cgu() {
 	}
 }
 
-function modifierCGU() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteCGU = $bdd->query('SELECT contenu FROM cgu');
+function modifierCGU($db) {
+	$requeteCGU = $db->query('SELECT contenu FROM cgu');
 	$CGU = $requeteCGU->fetch();
 
 	if (!empty($_POST['CGU'])){
-		$requete = $bdd->prepare(' UPDATE cgu SET contenu = ? ');
+		$requete = $db->prepare(' UPDATE cgu SET contenu = ? ');
 		$requete->execute(array(htmlspecialchars($_POST['CGU'])));
 	}
 }
 
 //FAQ
 
-function FaqQuestion() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteCGU = $bdd->query('SELECT contenu FROM cgu');
+function FaqQuestion($db) {
+	$requeteCGU = $db->query('SELECT contenu FROM cgu');
 	$CGU = $requeteCGU->fetch();
 	if (!empty($_POST['CGU'])){
 		echo $_POST['CGU'] ;
@@ -73,26 +68,22 @@ function FaqQuestion() {
 	}
 }
 
-function modifierFaq() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-
+function modifierFaq($db) {
 	if (isset($_POST['IdFaq'])){
-		$requete = $bdd->prepare(' UPDATE faq SET question = ? WHERE id_FAQ = ?');
+		$requete = $db->prepare(' UPDATE faq SET question = ? WHERE id_FAQ = ?');
 		$requete->execute(array(htmlspecialchars($_POST['FaqQuestion']), htmlspecialchars($_POST['IdFaq'])));
-		$requete = $bdd->prepare(' UPDATE faq SET reponse = ? WHERE id_FAQ = ?');
+		$requete = $db->prepare(' UPDATE faq SET reponse = ? WHERE id_FAQ = ?');
 		$requete->execute(array(htmlspecialchars($_POST['FaqReponse']), htmlspecialchars($_POST['IdFaq'])));
-		
 	}
 }
 
 
-function afficherFAQ(){
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteFAQ = $bdd->query('SELECT * FROM faq ORDER BY id_FAQ');
+function afficherFAQ($db){
+	$requeteFAQ = $db->query('SELECT * FROM faq ORDER BY id_FAQ');
 	$numero = 1;
 	while ($FAQ = $requeteFAQ->fetch()) {
 		echo '
-		<form method="post" action="Testir_Information_FAQ_administrateur.php" class="faq">
+		<form method="post" action="Testir_Information_FAQ_administrateur" class="faq">
 			<div class="question">
 				<h3> Question : '. $numero .' </h3>
 				<textarea type="text" name="FaqQuestion" class="FaqQuestion">'. $FAQ['question'] .'</textarea>
@@ -117,9 +108,8 @@ function afficherFAQ(){
 
 //Mentions legales
 
-function ml() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteML = $bdd->query('SELECT contenu FROM mentions_legales');
+function ml($db) {
+	$requeteML = $db->query('SELECT contenu FROM mentions_legales');
 	$ML = $requeteML->fetch();
 	if (!empty($_POST['ML'])){
 		echo $_POST['ML'] ;
@@ -129,13 +119,12 @@ function ml() {
 	}
 }
 
-function modifierML() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteML = $bdd->query('SELECT contenu FROM mentions_legales');
+function modifierML($db) {
+	$requeteML = $db->query('SELECT contenu FROM mentions_legales');
 	$ML = $requeteML->fetch();
 
 	if (!empty($_POST['ML'])){
-		$requete = $bdd->prepare(' UPDATE mentions_legales SET contenu = ? ');
+		$requete = $db->prepare(' UPDATE mentions_legales SET contenu = ? ');
 		$requete->execute(array(htmlspecialchars($_POST['ML'])));
 	}
 }

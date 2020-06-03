@@ -4,34 +4,31 @@
 
 //menuCapteur
 
-function testListe() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
+function testListe($db) {
 	if (isset($_POST['nomTest'])) {
-		$requeteNomCapteur = $bdd->prepare('SELECT nom FROM capteur WHERE nom LIKE ? ORDER BY nom');
+		$requeteNomCapteur = $db->prepare('SELECT nom FROM capteur WHERE nom LIKE ? ORDER BY nom');
 		$requeteNomCapteur->execute(array("%" . htmlspecialchars($_POST['nomTest']) . "%"));
 	}
 	else{
-		$requeteNomCapteur = $bdd->query('SELECT nom FROM capteur ORDER BY nom');
+		$requeteNomCapteur = $db->query('SELECT nom FROM capteur ORDER BY nom');
 	}
 	while ($nomCapteur = $requeteNomCapteur->fetch()) {
 		echo '<a href="#' . $nomCapteur['nom']. '"><li>' . $nomCapteur['nom'] . '</li> </a>';
 	}
 }
 
-function testListe2() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteNomTest = $bdd->query('SELECT nom FROM capteur ORDER BY nom');
+function testListe2($db) {
+	$requeteNomTest = $db->query('SELECT nom FROM capteur ORDER BY nom');
 	while ($nomTest = $requeteNomTest->fetch()) {
-		echo '<a href="Testir_Capteurs_administrateur.php#' . $nomTest['nom']. '"><li>' . $nomTest['nom'] . '</li> </a>';
+		echo '<a href="Testir_Capteurs_administrateur#' . $nomTest['nom']. '"><li>' . $nomTest['nom'] . '</li> </a>';
 	}
 }
 
 
 //Accueil
 
-function testAfficher() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteCapteur = $bdd->query('SELECT * FROM capteur ORDER BY nom');
+function testAfficher($db) {
+	$requeteCapteur = $db->query('SELECT * FROM capteur ORDER BY nom');
 
 	while ($capteur = $requeteCapteur->fetch()) {
 		echo '
@@ -51,12 +48,12 @@ function testAfficher() {
 
 			<div class="option">
 
-				<form method="post" action="Testir_Capteurs_Consulter_administrateur.php" id="formulaireOption">
+				<form method="post" action="Testir_Capteurs_Consulter_administrateur" id="formulaireOption">
 					<input type="submit" class= "bouton" value="consulter" >
 					<input type="hidden" name="nomCapteur" value="' . $capteur['nom'] . '">
 				</form>
 
-				<form method="post" action="Testir_Capteurs_Modifier_administrateur.php" id="formulaireOption">
+				<form method="post" action="Testir_Capteurs_Modifier_administrateur" id="formulaireOption">
 					<input type="submit" class= "bouton" value="modifier" >
 					<input type="hidden" name="nomCapteur" value="' . $capteur['nom'] . '">
 					<input type="hidden" name="imageCapteur" value="' . $capteur['image'] . '">
@@ -64,7 +61,7 @@ function testAfficher() {
 					<input type="hidden" name="programmeCapteur" value="' . $capteur['programme'] . '">
 				</form>
 
-				<form method="post" action="Testir_Capteurs_Supprimer_administrateur.php" id="formulaireOption">
+				<form method="post" action="Testir_Capteurs_Supprimer_administrateur" id="formulaireOption">
 					<input type="submit" class= "bouton" value="supprimer" >
 					<input type="hidden" name="nomCapteur" value="' . $capteur['nom'] . '">
 				</form>
@@ -83,10 +80,9 @@ function testAfficher() {
 
 
 
-function ajouterTest() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
+function ajouterTest($db) {
 	if (!empty($_POST['nomNouveauTest'])) {
-		$requeteNouveauCapteur = $bdd->prepare(' INSERT INTO capteur(nom,image,fonctionnalite,programme) VALUES (?, ?, ?, ?) ');
+		$requeteNouveauCapteur = $db->prepare(' INSERT INTO capteur(nom,image,fonctionnalite,programme) VALUES (?, ?, ?, ?) ');
 		$requeteNouveauCapteur->execute(array(htmlspecialchars($_POST['nomNouveauTest']), htmlspecialchars($_POST['imageNouveauTest']), htmlspecialchars($_POST['fonctionnaliteNouveauTest']), htmlspecialchars($_POST['programmeNouveauTest'])));
 			}
 }
@@ -102,11 +98,9 @@ function verificationNom(){
 
 //consulter
 
-function testConsulter() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteCapteur = $bdd->prepare('SELECT * FROM capteur WHERE nom= ?');
+function testConsulter($db) {
+	$requeteCapteur = $db->prepare('SELECT * FROM capteur WHERE nom= ?');
 	$requeteCapteur->execute(array(htmlspecialchars($_POST['nomCapteur'])));
-
 	$capteur = $requeteCapteur->fetch();
 	echo '
 		<div class="test" id="'. $capteur['nom'].'">
@@ -135,66 +129,54 @@ function testConsulter() {
 
 //modifier
 
-function afficherNom(){
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteCapteur = $bdd->prepare('SELECT * FROM capteur WHERE nom = ?');
+function afficherNom($db){
+	$requeteCapteur = $db->prepare('SELECT * FROM capteur WHERE nom = ?');
 	$requeteCapteur->execute(array($_POST['ModificationNom']));
-
 	$capteur = $requeteCapteur->fetch();
 	echo $capteur['nom'];	
 }
 
-function afficherImage(){
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteCapteur = $bdd->prepare('SELECT * FROM capteur WHERE nom= ?');
+function afficherImage($db){
+	$requeteCapteur = $db->prepare('SELECT * FROM capteur WHERE nom= ?');
 	$requeteCapteur->execute(array($_POST['ModificationNom']));
-
 	$capteur = $requeteCapteur->fetch();
 	echo $capteur['image'];
 }
 
-function afficherFonctionnalite(){
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteCapteur = $bdd->prepare('SELECT * FROM capteur WHERE nom= ?');
+function afficherFonctionnalite($db){
+	$requeteCapteur = $db->prepare('SELECT * FROM capteur WHERE nom= ?');
 	$requeteCapteur->execute(array($_POST['ModificationNom']));
-
 	$capteur = $requeteCapteur->fetch();
 	echo $capteur['fonctionnalite'];
 }
 
-function afficherProgramme(){
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteCapteur = $bdd->prepare('SELECT * FROM capteur WHERE nom= ?');
+function afficherProgramme($db){
+	$requeteCapteur = $db->prepare('SELECT * FROM capteur WHERE nom= ?');
 	$requeteCapteur->execute(array($_POST['ModificationNom']));
-
 	$capteur = $requeteCapteur->fetch();
 	echo $capteur['programme'];
 }
 
 
-function modifierNom() {
+function modifierNom($db) {
 	if (!empty($_POST['ModificationNom'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteModification = $bdd->prepare('UPDATE capteur SET nom = ? WHERE nom = ? ');
+		$requeteModification = $db->prepare('UPDATE capteur SET nom = ? WHERE nom = ? ');
 		$requeteModification->execute(array(htmlspecialchars($_POST['ModificationNom']), htmlspecialchars($_POST['nomSecondaire'])));
 	}
 }
 
-function modifierImage() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteModification = $bdd->prepare('UPDATE capteur SET image = ? WHERE nom = ? ');
+function modifierImage($db) {
+	$requeteModification = $db->prepare('UPDATE capteur SET image = ? WHERE nom = ? ');
 	$requeteModification->execute(array(htmlspecialchars($_POST['ModificationImage']), htmlspecialchars($_POST['nomSecondaire'])));
 }
 
-function modifierFonctionnalite() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteModification = $bdd->prepare('UPDATE capteur SET fonctionnalite = ? WHERE nom = ? ');
+function modifierFonctionnalite($db) {
+	$requeteModification = $db->prepare('UPDATE capteur SET fonctionnalite = ? WHERE nom = ? ');
 	$requeteModification->execute(array(htmlspecialchars($_POST['ModificationFonctionnalite']), htmlspecialchars($_POST['nomSecondaire'])));
 }
 
-function modifierProgramme() {
-	$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-	$requeteModification = $bdd->prepare('UPDATE capteur SET programme = ? WHERE nom = ? ');
+function modifierProgramme($db) {
+	$requeteModification = $db->prepare('UPDATE capteur SET programme = ? WHERE nom = ? ');
 	$requeteModification->execute(array(htmlspecialchars($_POST['ModificationProgramme']), htmlspecialchars($_POST['nomSecondaire'])));
 }
 
@@ -207,10 +189,9 @@ function verificationNom2(){
 
 //supprimer
 
-function supprimer() {
+function supprimer($db) {
 	if (isset($_POST['nomSecondaire'])) {
-		$bdd = new PDO('mysql:host=localhost;dbname=bdd testir;charset=utf8', 'root', '');
-		$requeteSupprimer = $bdd->prepare('DELETE FROM capteur WHERE nom = ?');
+		$requeteSupprimer = $db->prepare('DELETE FROM capteur WHERE nom = ?');
 		$requeteSupprimer->execute(array(htmlspecialchars($_POST['nomSecondaire'])));
 	}
 }

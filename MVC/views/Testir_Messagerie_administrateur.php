@@ -1,6 +1,8 @@
 
+
 <?php
-require("controleur\Testir_Messagerie_fonction.php");
+require("controllers/Testir_Messagerie_fonction.php");
+require ("models/connexiondb.php");
 ?>
 
 
@@ -12,7 +14,7 @@ require("controleur\Testir_Messagerie_fonction.php");
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="../../index.php">
+		<link rel="stylesheet" type="text/css" href="stylesheetMVC/Admin/Testir_Messagerie_administrateur.css">
 
 		<script>
 
@@ -20,7 +22,7 @@ require("controleur\Testir_Messagerie_fonction.php");
 			var contenu = document.getElementById(idMessage);
 
 			if (contenu.style.display == "none") {
-				contenu.style.display = "block";
+				contenu.style.display = "contents";
 			}
 			else{
 				contenu.style.display = "none";
@@ -63,20 +65,20 @@ require("controleur\Testir_Messagerie_fonction.php");
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php"); ?>
+            <?php require("Testir_Menu_administrateur.php"); ?>
 			
 			<section>
 
 				<aside id="menuMessage">
 
 					<div id="rectangle_rouge">
-						<form method="post" action="Testir_Messagerie_administrateur.php">
+						<form method="post" action="Testir_Messagerie_administrateur">
 							<input type="search" name="retrouverMessage" id="formMessage" placeholder=" retrouver un message ">
 						</form>
 					</div>
 
 					<div id="liste_rouge">
-						<button id="nouveau_message" onclick="window.location.href = 'Testir_Messagerie_Nouveau_administrateur.php';">
+						<button id="nouveau_message" onclick="window.location.href = 'Testir_Messagerie_Nouveau_administrateur';">
 							<h3> Nouveau Message </h3>
 						</button> 
 						<div id="categories">
@@ -106,7 +108,7 @@ require("controleur\Testir_Messagerie_fonction.php");
 									<td class="colonne2"> Auteur </td>
 									<td class="colonne3"> Sujet </td>
 								</tr>
-								<?php recuAfficher(); ?>
+								<?php recuAfficher($db); ?>
 							</table>
 						</div>
 					</div>
@@ -120,7 +122,7 @@ require("controleur\Testir_Messagerie_fonction.php");
 									<td class="colonne2"> Destinataire </td>
 									<td class="colonne3"> Sujet </td>
 								</tr>
-								<?php envoyeAfficher(); ?>
+								<?php envoyeAfficher($db); ?>
 							</table>
 						</div>
 					</div>

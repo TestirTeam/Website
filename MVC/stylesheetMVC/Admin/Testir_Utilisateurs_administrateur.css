@@ -62,7 +62,7 @@ header a:hover {
 nav{
 	height: 8%;
 	width: 100%;
-	background: url('C:/Users/paulb/Pictures/Image_Testir/fondBalleOpaque.png') no-repeat;
+	background: url('../../../Images/admin/fondBalleOpaque.png') no-repeat;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -247,7 +247,7 @@ form {
 #bas h2{
 	font-size: 30px;
 	color: white;
-	margin: 10px;
+	margin: 15px;
 }
 #tableau{
 	color: #707070;
@@ -296,7 +296,7 @@ form {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	margin-top: 110px;
+	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
@@ -337,30 +337,10 @@ form {
 	font-size: 30px;
 	margin: 5px;
 }
-#pouces {
-	width: 80%;
-	height: 80px;
-	border: solid 2px grey;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	font-size: 30px;
-	color: #707070;
-}
-#pouce_bleu img{
-	height: 50px;
-	width: auto;
-	margin: 10px;
-}
-#pouce_rouge img{
-	height: 50px;
-	width: auto;
-	margin: 10px;
-}
 
 #commentaires {
 	background-color: #707070;
-	height: 350px;
+	height: 80%;
 	width: 90%;
 	display: flex;
 	flex-direction: column;
@@ -374,7 +354,8 @@ form {
 }
 #zoneCommentaire{
 	height: 250px;
-	width: 90%;
+	width: 95%;
+	margin-bottom: 10px;
 }
 
 

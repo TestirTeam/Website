@@ -1,8 +1,9 @@
 
 
 <?php
-require("controleur\Testir_Capteurs_fonction.php");
-supprimer();
+require("controllers/Testir_Capteurs_fonction.php");
+require ("models/connexiondb.php");
+supprimer($db);
 ?>
 
 
@@ -14,27 +15,27 @@ supprimer();
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="../../index.php">
+		<link rel="stylesheet" type="text/css" href="stylesheetMVC/Admin/Testir_Capteurs_Supprimer_administrateur.css">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php"); ?>
+            <?php require("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 				<section>
 
 					<aside id="menuTest">
 						<div id="rechercheTest">
-							<form method="post" action="Testir_Capteurs_administrateur.php">
+							<form method="post" action="Testir_Capteurs_administrateur">
 								<input type="search" name="nomTest" id="formTest" placeholder=" nom du test ">
 							</form>
 						</div>
 						<div id="listeTest">
 							<h2> Liste des tests : </h2>
 							<ul>
-								<?php testListe2() ; ?>
+								<?php testListe2($db) ; ?>
 							</ul>
 						</div>
 					</aside>
@@ -48,7 +49,7 @@ supprimer();
 							<div class="rectangle_blanc"></div>
 						</div>
 
-						<button id="boutonAnnuler" onclick="window.location.href = 'Testir_Capteurs_administrateur.php';">
+						<button id="boutonAnnuler" onclick="window.location.href = 'Testir_Capteurs_administrateur';">
 							<div id="imagePlus"></div>
 							<h2> <?php retour() ;?> </h2>
 							<div id="imagePlus"></div>
@@ -57,15 +58,11 @@ supprimer();
 						<div id="nomTestSuppression" >
 							<h3> <?php validation(); ?> </h3>
 
-							<form method="post" action="../../index.php" id="formSuppression">
+							<form method="post" action="Testir_Capteurs_Supprimer_administrateur" id="formSuppression">
 								<input type="hidden" name="nomSecondaire" value= <?php validation() ; ?> >
 								<input type="submit" name="suppression" id="supprimer" value=" Supprimer le capteur " >
 							</form>
 						</div>
-
-						
-							
-
 
 					</article>
 					

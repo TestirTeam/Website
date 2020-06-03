@@ -10,19 +10,19 @@ function nombreDemandeInscription($db){
 }
 
 function nombreTicketAdministrateur($db){
-	$requeteAdministrateur = $db->query('SELECT * FROM administrateur');
-	$administrateur = $requeteAdministrateur->fetch();
-	echo $administrateur['nombreTickets'];
+	$requeteClient = $db->query('SELECT * FROM client_paul');
+	$client = $requeteClient->fetch();
+	echo $client['nombreTickets'];
 }
 
 function nombreMessageAdministrateur($db){
-	$requeteAdministrateur = $db->query('SELECT * FROM administrateur');
-	$administrateur = $requeteAdministrateur->fetch();
-	echo $administrateur['nombreMessages'];
+	$requeteClient = $db->query('SELECT * FROM client_paul');
+	$client = $requeteClient->fetch();
+	echo $client['nombreMessages'];
 }
 
 function nombreClientInscrit($db){
-	$requeteClient = $db->query('SELECT COUNT(*) FROM client');
+	$requeteClient = $db->query('SELECT COUNT(*) FROM client_paul');
 	$client = $requeteClient->fetch();
 	echo $client[0];
 }

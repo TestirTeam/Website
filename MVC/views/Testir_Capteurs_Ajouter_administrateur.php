@@ -1,8 +1,9 @@
 
 
 <?php
-require("controleur\Testir_Capteurs_fonction.php");
-ajouterTest();
+require("controllers/Testir_Capteurs_fonction.php");
+require ("models/connexiondb.php");
+ajouterTest($db);
 ?>
 
 
@@ -14,13 +15,13 @@ ajouterTest();
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="../../index.php">
+		<link rel="stylesheet" type="text/css" href="stylesheetMVC/Admin/Testir_Capteurs_Ajouter_administrateur.css">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php"); ?>
+            <?php require("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 			
@@ -28,14 +29,14 @@ ajouterTest();
 					<aside id="menuTest">
 
 						<div id="rechercheTest">
-							<form method="post" action="Testir_Capteurs_administrateur.php">
+							<form method="post" action="Testir_Capteurs_administrateur" id="formulaireRecherche">
 								<input type="search" name="nomTest" id="formTest" placeholder=" nom du test ">
 							</form>
 						</div>
 						<div id="listeTest">
 							<h2> Liste des tests : </h2>
 							<ul>
-								<?php testListe2() ; ?>
+								<?php testListe2($db) ; ?>
 							</ul>
 						</div>
 
@@ -50,13 +51,13 @@ ajouterTest();
 							<div class="rectangle_blanc"></div>
 						</div>
 
-						<button id="boutonAnnuler" onclick="window.location.href = 'Testir_Capteurs_administrateur.php';">
+						<button id="boutonAnnuler" onclick="window.location.href = 'Testir_Capteurs_administrateur';">
 							<div id="imageMoins"></div>
 							<h2> Retour </h2>
 							<div id="imageMoins"></div>
 						</button>
 
-						<form method="post" action="Testir_Capteurs_Ajouter_administrateur.php" id="nouveauTest">
+						<form method="post" action="Testir_Capteurs_Ajouter_administrateur"  id="nouveauTest">
 							<div id="nouveauTestNom">
 								<?php  verificationNom() ; ?>
 								<h3> Nom : </h3>

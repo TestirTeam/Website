@@ -24,7 +24,7 @@
             <a href=deconnexion>Déconnexion</a>
 
         <?php  elseif(isset($_SESSION['admin']) AND $_SESSION['admin']==1AND $_SESSION['examinateur']==0):     ?>
-            <a href=administrateur>Admin</a>
+            <a href=Testir_Accueil_administrateur>Admin</a>
             <a href=messagerie-envoi>Messagerie</a>
             <a href=deconnexion>Déconnexion</a>
         <?php  elseif(isset($_SESSION['examinateur']) AND $_SESSION['examinateur']==1 AND $_SESSION['admin']==0):     ?>

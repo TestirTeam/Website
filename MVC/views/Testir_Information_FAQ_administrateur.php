@@ -1,8 +1,9 @@
 
 
 <?php
-require("controleur\Testir_Information_fonction.php");
-modifierFaq();
+require("controllers\Testir_Information_fonction.php");
+require ("models/connexiondb.php");
+modifierFaq($db);
 ?>
 
 
@@ -14,13 +15,13 @@ modifierFaq();
 	<head>
 		<meta charset="utf-8">
 		<title> Testir Administrateur </title>
-		<link rel="stylesheet" type="text/css" href="../../index.php">
+		<link rel="stylesheet" type="text/css" href="stylesheetMVC/Admin/Testir_Information_FAQ_administrateur.css">
 	</head>
 
 	<body>
 		<div id="bloc_page">
 
-			<?php include("Testir_Menu_administrateur.php"); ?>
+            <?php require("Testir_Menu_administrateur.php"); ?>
 
 			<div id="contenu">
 			
@@ -32,13 +33,13 @@ modifierFaq();
 						<div class="rectangle_blanc"></div>
 					</div>
 
-					<button id="boutonAnnuler" onclick="window.location.href = 'Testir_Information_administrateur.php';">
+					<button id="boutonAnnuler" onclick="window.location.href = 'Testir_Information_administrateur';">
 						<div id="imageMoins"></div>
 						<h2> Retour </h2>
 						<div id="imageMoins"></div>
 					</button>
 
-					<?php afficherFAQ(); ?>
+					<?php afficherFAQ($db); ?>
 
 				</section>
 			</div>
