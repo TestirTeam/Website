@@ -32,11 +32,11 @@ if(isset($_SESSION['id'])){
 
         <div class="menu">
             <p class="p1"><i class="fas fa-user"></i>
-                <a href="../index.php" target="_top">Informations de l'utilisateur</a> <br> </p>
+                <a href="modifUser" target="_top">Informations de l'utilisateur</a> <br> </p>
             <p> <i class="fas fa-unlock-alt"></i>
-                <a href="../index.php" target="_top">Paramètres de connexion et sécurité</a> <br> </p>
+                <a href="muSecu" target="_top">Paramètres de connexion et sécurité</a> <br> </p>
             <p><i class="fas fa-cog"></i>
-                <a href="../index.php" target="_top">Autres paramètres</a> <br> </p>
+                <a href="muParam" target="_top">Autres paramètres</a> <br> </p>
         </div>
     </div>
     <div class="colonne droite">

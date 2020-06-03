@@ -33,12 +33,12 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     <div class="boitemsg">
         <div class="boxenvoi">
             <img src="../Images/message/gmail.png" class="boxmail">
-            <a href="../index.php" class="a-envoi"> <p class="p-envoi">Boite de reception</p></a>
+            <a href="messagerie-reception" class="a-envoi"> <p class="p-envoi">Boite de reception</p></a>
         </div>
         </br>
         <?= nl2br($m['message']); ?>
         </br> </br> </br> </br>
-        <form id="my_form" method="POST" action="../index.php">
+        <form id="my_form" method="POST" action="messagerie-reception">
         <div class="boutons"><a href="#">
                 <p>
                     <input type="hidden" name="idmsg" id="idmsg" value=<?=$id_msg?>>

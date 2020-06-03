@@ -26,7 +26,7 @@ if(isset($_SESSION['id']) and !empty($_SESSION['id'])) {
         <div class="envoie">
             <div class="boxenvoi">
                 <img src="../Images/message/gmail.png" class="boxmail">
-                <a href="../index.php" class="a-recep"> <p class="p-recep">Boite de reception</p></a>
+                <a href="messagerie-reception" class="a-recep"> <p class="p-recep">Boite de reception</p></a>
             </div>
 
             <br><br><br>

@@ -99,6 +99,10 @@ if($url==''){
 
     require('views/mail.php');
 
+}elseif ($url[0]=='mention'AND empty($url[1])AND isset($_SESSION['mail'])) {
+
+    require('views/mentions.php');
+
 }else{
     require('views/404error.php');
 }
