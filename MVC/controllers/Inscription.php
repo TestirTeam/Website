@@ -39,7 +39,7 @@ function checkInscription($db){
 
                             if ($mdp == $mdpc) {
                                 $reponse = insertUserInfo($db,$pseudo,$nom, $prenom,$age,$date,$pays,$adrs,$sexe,$mail,$mdp);
-                                header('Location: http://localhost/WebsiteTestir/Website/MVC/index.php');
+                                header('Location: https://testir-website.herokuapp.com/MVC/index.php');
                                  return $error = 'Votre compte a été crée !';
 
 
