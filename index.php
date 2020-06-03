@@ -1,3 +1,3 @@
 <?php
-header("Location:Website/MVC/index.php");
+header("Location:MVC/index.php");
 ?>
